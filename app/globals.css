@@ -1,27 +1,118 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.gradient-container {
+  background-color: #5a6360;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: -1;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
+.gradient {
+  --size: 900px;
+  --speed: 30s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 5));
+  background: #5e0d14;
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(94, 13, 20, 1) 30%,
+    rgba(237, 217, 125, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(94, 13, 20, 1) 30%,
+    rgba(237, 217, 125, 1) 100%
+  );
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    0deg,
+    rgba(94, 13, 20, 1) 30%,
+    rgba(237, 217, 125, 1) 100%
+  );
+  animation: rotate var(--speed) var(--easing) alternate infinite;
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+}
+body {
+  background-color: #5a6360;
+}
+* {
+  transition: all 0.25s ease-out;
+  /* font-family: Lato; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 80px;
+}
+p {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.social-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.social-container > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  border: 1px solid #fff;
+  border-radius: 60px;
+  padding: 5px;
+  padding-right: 10px;
+  margin: 8px;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+.social-container > a > img {
+  width: 36px;
+  fill: #fff;
+  margin-right: 5px;
+}
+.social-container > a:hover {
+  background-color: #ffffff55;
+}
+@media (min-width: 720px) {
+  .gradient {
+    --size: 180vh;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
 }
