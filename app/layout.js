@@ -1,17 +1,27 @@
 import './globals.css'
-import { Lato } from 'next/font/google'
+import { Inter, Oswald } from 'next/font/google'
 
-const lato = Lato({weight: ['300', '400', '700'], subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap'
+})
+
+const oswald = Oswald({
+  subsets: ['latin'],
+  variable: '--font-oswald',
+  display: 'swap'
+})
 
 export const metadata = {
-  title: 'Under Maintainence | ACES',
+  title: 'ACES DIT',
   description: 'Association of Computer Engineering Students DIT',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={lato.className}>{children}</body>
+      <body className={`${inter.variable} ${oswald.variable} font-body`}>{children}</body>
     </html>
   )
 }
