@@ -15,13 +15,13 @@ const EventCard = ({ title, imageUrl, linkTo }) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        padding: '20px',
+        padding: '0px 20px 20px 20px',
         color: 'white',
         transition: 'transform 0.3s, box-shadow 0.3s',
         transform: hovered ? 'scale(1.05) rotate(1deg)' : 'scale(1)',
         boxShadow: hovered ? '0 5px 15px rgba(0, 0, 0, 0.3)' : 'none',
         cursor: 'pointer',
-        minHeight: '40vh'
+        minHeight: '40vh',
     };
 
     // Handlers for mouse enter and leave events
@@ -43,7 +43,7 @@ const EventCard = ({ title, imageUrl, linkTo }) => {
     return (
         <div
             style={cardStyle}
-            className='rounded-2xl'
+            className='rounded-2xl w-[80vw] md:w-[30vw]'
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
@@ -56,7 +56,7 @@ const EventCard = ({ title, imageUrl, linkTo }) => {
 // This is a wrapper component for the section containing all event cards
 const EventSectionWrapper = ({ eventCards = [] }) => {
     return (
-        <div className='py-20 px-4 w-full h-full'>
+        <div className='pb-20 pt-0 px-4 w-full h-full'>
 
             <div className='flex relative md:justify-between md:mt-0 md:mb-4 md:items-center'>
                 <div className='translate-y-[-2%] text-center w-[100%] md:w-fit'>
@@ -68,7 +68,7 @@ const EventSectionWrapper = ({ eventCards = [] }) => {
             </div>
 
             <div
-                className='gap-6 grid grid-cols-1 h-60 md:grid-cols-3 md:h-full'>
+                className='gap-6 grid grid-cols-1 h-60 md:grid-cols-3 md:h-full h-fit'>
                 {eventCards.map((event, index) => (
                     <EventCard
                         key={index}
@@ -79,7 +79,7 @@ const EventSectionWrapper = ({ eventCards = [] }) => {
                 ))}
             </div>
 
-            <div className='h-fit w-[100%] visible translate-y-[50rem] flex justify-center items-center md:collapse'>
+            <div className='h-fit w-[100%] visible mt-4 flex justify-center items-center md:collapse'>
                 <button className='px-4 rounded-xl bg-amber-400 text-[1.1rem] py-2'>Explore All</button>
             </div>
         </div>

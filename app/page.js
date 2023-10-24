@@ -3,6 +3,7 @@ import Sandbox from './components/Sandbox'
 import Navbar from './components/Navbar'
 import Home from './components/stats.js';
 import Event_Section from "./components/EventCard";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,20 +13,15 @@ function App() {
       <div className='grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
         <Sandbox title="Hello" body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum delectus inventore aut, nulla deleniti rem odio ea laborum animi fugiat?" />
       </div>
-
       {/* Hero Section */}
-
-      {/* ... */}
-
-      {/* Who are we section */}
-
-      {/* ... */}
+    </main>
+    {/* Who are we section */}
 
       {/* Stats section */}
       <Home />
       {/* Events carousel */}
       <Event_Section/>
-    </main>
+      <Footer/>
     </>
   )
 }
