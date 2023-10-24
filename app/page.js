@@ -14,14 +14,15 @@ function App() {
       {/* Who are we section */}
 
       {/* Stats section */}
-
+      <Home/>
       {/* <Home /> */}
 
       {/* Events carousel */}
 
       {/* <Event_Section/> */}
-
+        <Event_Section/>
       {/* <Footer/> */}
+        <Footer/>
     </>
   )
 }
