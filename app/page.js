@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Sandbox from './components/Sandbox'
 import Navbar from './components/Navbar'
+import Home from './components/stats.js';
 import Event_Section from "./components/EventCard";
 
-export default function Home() {
+function App() {
   return (
     <>
     <Navbar/>
@@ -21,12 +22,12 @@ export default function Home() {
       {/* ... */}
 
       {/* Stats section */}
-
-      {/* ... */}
+      <Home />
       {/* Events carousel */}
-
       <Event_Section/>
     </main>
     </>
   )
 }
+
+export default App;
