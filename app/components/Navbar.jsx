@@ -37,6 +37,7 @@ function Navbar() {
             height={20}
             width={20}
             src="/nav-open.svg"
+            alt='open menu'
           />
         </button>
       </div>
@@ -50,6 +51,7 @@ function Navbar() {
             height={20}
             width={20}
             src="/nav-close.svg"
+            alt='close menu'
           />
         </button>
         <ul className="flex flex-col p-6">
