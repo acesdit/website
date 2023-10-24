@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Sandbox from './components/Sandbox'
+import Event_Section from "./components/EventCard";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <Sandbox title="Hello" body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum delectus inventore aut, nulla deleniti rem odio ea laborum animi fugiat?" />
         <Sandbox title="Hello" body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum delectus inventore aut, nulla deleniti rem odio ea laborum animi fugiat?" />
       </div>
+        <Event_Section/>
     </main>
   )
 }
