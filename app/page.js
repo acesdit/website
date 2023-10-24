@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Sandbox from './components/Sandbox'
+import Event_Section from "./components/EventCard";
 
 export default function Home() {
   return (
