@@ -1,15 +1,29 @@
 import Image from 'next/image'
 import Sandbox from './components/Sandbox'
+import Navbar from './components/Navbar'
+import Home from './components/stats.js';
 import Event_Section from "./components/EventCard";
 import Footer from "./components/Footer";
 
-export default function Home() {
+function App() {
   return (
-    <main>
-        <div className='flex justify-center px-4 w-[100%] mx-auto my-4'>
-            <Event_Section/>
-        </div>
-        <Footer/>
+    <>
+    <Navbar/>
+    <main className='container mx-auto px-4 py-6'>
+      <div className='grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
+        <Sandbox title="Hello" body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum delectus inventore aut, nulla deleniti rem odio ea laborum animi fugiat?" />
+      </div>
+      {/* Hero Section */}
     </main>
+    {/* Who are we section */}
+
+      {/* Stats section */}
+      <Home />
+      {/* Events carousel */}
+      <Event_Section/>
+      <Footer/>
+    </>
   )
 }
+
+export default App;
