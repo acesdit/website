@@ -1,9 +1,77 @@
 import React from 'react';
-import ClubImage from './clubimage.js';
-import ClubIntro from './clubintro.js';
-import ClubEvents from './clubevent.js';
-import ClubMembers from './clubmember.js';
-import ClubParticipants from './clubparticipant.js';
+
+const ClubEvents = () => {
+  return (
+    <div style={{width:'fit-content'}}>
+      <h1 style={{fontSize:'5.5rem',fontWeight:'600'}}>
+        108+<br/> </h1>
+        <p style={{fontSize:'1.3rem'}}>Events organized</p>
+     
+      
+    </div>
+  );
+}
+
+
+
+
+const ClubImage = () => {
+  return (
+    <div>
+      <img src="images/img5.svg" alt="Club" />
+    </div>
+  );
+}
+
+
+const ClubIntro = () => {
+  return (
+    <div>
+      <h1 style={{fontSize:'2.5rem',fontWeight:'800'}}>
+        <div  style={{ color:'#7d111c' }} >
+       
+          SPARKING INNOVATION
+          <br/>
+          AMONG STUDENTS
+        </div> </h1>
+       <p style={{fontSize:'1.3rem'}}> Association of Computer Engineering Students is the 
+        departmental club of Department of Computer 
+        Engineering at Dr.D.Y Patil Institute of Technology,
+        Pimpri.</p>
+     
+      
+    </div>
+  );
+}
+
+
+
+const ClubMembers = () => {
+  return (
+    <div>
+      <h1  style={{fontSize:'5.5rem',fontWeight:'600'}}>
+        470+<br/></h1>
+        <p style={{fontSize:'1.3rem'}}>Members</p>
+      
+      
+    </div>
+  );
+}
+
+
+
+const ClubParticipants = () => {
+  return (
+    <div>
+      <h1  style={{fontSize:'5.5rem',fontWeight:'600'}}>24,000+</h1>
+      <p style={{fontSize:'1.3rem'}}>  Participants</p>
+   
+      
+    </div>
+  );
+}
+
+
 
 const Home = () => {
   const containerStyle = {
