@@ -2,10 +2,11 @@ import Image from 'next/image'
 import Sandbox from './components/Sandbox'
 import Navbar from './components/Navbar'
 import StatsSection from './components/stats.js';
-import Event_Section from "./components/EventCard";
+import Event_Section from "./components/EventCardbk";
 import Footer from "./components/Footer";
 import Hero from './components/Hero';
 import BlogCard from './components/BlogCard.js';
+import EventsSection from './components/EventsSection';
 
 function App() {
   return (
@@ -15,12 +16,11 @@ function App() {
       {/* Who are we section */}
 
       {/* Stats section */}
-      <StatsSection/>
+      {/* <StatsSection/> */}
       {/* <Home /> */}
 
-      {/* Events carousel */}
-
       {/* <Event_Section/> */}
+      <EventsSection/>
 
       {/* <Footer/> */}
     </>
