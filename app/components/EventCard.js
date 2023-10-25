@@ -60,7 +60,7 @@ const EventSectionWrapper = ({ eventCards = [] }) => {
 
             <div className='flex relative md:justify-between md:mt-0 md:mb-4 md:items-center'>
                 <div className='translate-y-[-2%] text-center w-[100%] md:w-fit'>
-                    <p className='text-[#7D111C] text-[42px] font-medium uppercase font-sans'>Events</p>
+                    <p className='main-head'>Events</p>
                 </div>
                 <div className='h-fit w-fit absolute top-[50%] right-[0%] translate-y-[-47%] collapse md:visible'>
                     <button className='px-4 rounded-xl bg-amber-400 text-[1.1rem] py-2'>Explore All</button>
