@@ -6,3 +6,7 @@
 /* * {
   border: red solid 1px;
 } */
+
+.main-head {
+  @apply uppercase text-primary font-title font-medium text-5xl leading-none pb-4;
+}
