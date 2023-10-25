@@ -5,6 +5,7 @@ import Home from './components/stats.js';
 import Event_Section from "./components/EventCard";
 import Footer from "./components/Footer";
 import Hero from './components/Hero';
+import BlogCard from './components/BlogCard.js';
 
 function App() {
   return (
@@ -14,15 +15,14 @@ function App() {
       {/* Who are we section */}
 
       {/* Stats section */}
-      <Home/>
+
       {/* <Home /> */}
 
       {/* Events carousel */}
 
       {/* <Event_Section/> */}
-        <Event_Section/>
+
       {/* <Footer/> */}
-        <Footer/>
     </>
   )
 }
