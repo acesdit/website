@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+.heading>h1{
+  color:	rgb(125, 17, 28);
+  font-family: 'Oswald', sans-serif;
+  font-size:60px ;
+  margin-top: 180px;
+  margin-left: 60px;
+  margin-bottom: 20px;
+
+
+}
+
+.paragraph-container p{
+  font-family: 'Inter', sans-serif;
+  margin-left: 60px;
+  line-height: 10px;
+  font-size: 20px;
+}
+.image-container {
+  
+  position: fixed;
+  top:0;
+  right:0;
+  margin-left: calc(100% - 60px);
+}
+
+.custom-image {
+  width:640px;
+  height:340px;
+  margin-top: 150px;
+  
+}
+
