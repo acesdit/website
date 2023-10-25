@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* DEBUG LAYOUTS */
+/* * {
+  border: red solid 1px;
+} */
