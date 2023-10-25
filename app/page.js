@@ -20,9 +20,9 @@ function App() {
       {/* <Home /> */}
 
       {/* <Event_Section/> */}
-      <EventsSection/>
+      {/* <EventsSection/> */}
 
-      {/* <Footer/> */}
+      <Footer/>
     </>
   )
 }
