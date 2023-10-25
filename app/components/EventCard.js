@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 
 // This is a component for an individual event card
 const EventCard = ({ title, imageUrl, linkTo }) => {
@@ -43,7 +43,7 @@ const EventCard = ({ title, imageUrl, linkTo }) => {
     return (
         <div
             style={cardStyle}
-            className='rounded-2xl w-[80vw] md:w-[30vw]'
+            className='rounded-2xl w-[80vw] md:w-[100%]'
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
@@ -56,7 +56,7 @@ const EventCard = ({ title, imageUrl, linkTo }) => {
 // This is a wrapper component for the section containing all event cards
 const EventSectionWrapper = ({ eventCards = [] }) => {
     return (
-        <div className='pb-20 pt-0 px-4 w-full h-full'>
+        <div className='pb-4 pt-0 px-4 w-full h-full'>
 
             <div className='flex relative md:justify-between md:mt-0 md:mb-4 md:items-center'>
                 <div className='translate-y-[-2%] text-center w-[100%] md:w-fit'>
@@ -68,7 +68,7 @@ const EventSectionWrapper = ({ eventCards = [] }) => {
             </div>
 
             <div
-                className='gap-6 grid grid-cols-1 h-60 md:grid-cols-3 md:h-full h-fit'>
+                className='gap-6 grid grid-cols-1 md:grid-cols-3 md:h-full h-fit'>
                 {eventCards.map((event, index) => (
                     <EventCard
                         key={index}
@@ -108,7 +108,7 @@ const Event_Section = () => {
     ]
 
     return (
-        <div>
+        <div className='px-20 mt-10'>
             <EventSectionWrapper eventCards={eventData}></EventSectionWrapper>
         </div>
     )
