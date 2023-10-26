@@ -43,7 +43,7 @@ function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      <div className={`fixed top-0 right-0 bg-white h-full w-5/6 px-4 py-6 transition-all shadow-2xl ${!isOpen && 'translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 bg-white h-full w-5/6 px-4 py-6 transition-transform z-50 shadow-2xl ${!isOpen && 'translate-x-full'}`}>
         {/* Mobile toggle close */}
         <button className="md:hidden block ml-auto" onClick={() => setIsOpen(false)}>
           <Image
