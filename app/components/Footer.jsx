@@ -27,7 +27,7 @@ const Footer = () => {
             <div className='container mx-auto md:flex-row flex flex-col justify-center items-center md:items-start px-4 py-12 md:px-6'>
                 <div className="md:w-2/4 flex flex-col md:flex-row">
                     <div className='flex justify-center items-center md:pr-12'>
-                        <Image src="/acesLogo(Black).svg" height={124} width={124} />
+                        <Image src="/acesLogo(Black).svg" height={124} width={124} alt="ACES Logo" />
                     </div>
                     <div className=''>
                         <h3 className='text-3xl font-title font-medium uppercase  text-white leading-normal pb-2 text-center md:text-left'>

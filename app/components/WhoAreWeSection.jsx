@@ -18,6 +18,7 @@ function WhoAreWeSection() {
             src="/images/team.png"
             width={640}
             height={340}
+            alt='Team Photo'
           />
         </div>
       </div>

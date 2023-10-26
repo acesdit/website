@@ -10,6 +10,7 @@ function StatsSection() {
             className="w-[80%]"
             width={415}
             height={334}
+            alt="Legacy of 10+ years"
           />
         </div>
         <div className="md:w-1/2 py-12 md:pr-44 flex flex-col justify-center">

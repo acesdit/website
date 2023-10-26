@@ -23,6 +23,7 @@ function Hero() {
               src={phoenix}
               width={628}
               height={628}
+              alt='Phoenix - The ACES Mascot'
             />
           </div>
         </div>
