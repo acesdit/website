@@ -11,6 +11,31 @@
   --container-width: 1200px; /*For using with bleeding layout*/
 }
 
+.hero-bg {
+  backdrop-filter: blur(25px);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-container {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url(/images/hero.jpg);
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)); */
+}
+
+.first-element {
+  @apply pt-0 md:pt-24;
+}
+
+nav.nav-middle {
+  backdrop-filter: blur(20px);
+  background-color: rgba(255,255,255,0.8);
+  @apply text-black;
+}
+
+svg.with-text {
+  fill: currentColor;
+}
+
 /* sm */
 @media (min-width: 640px) {
   :root {
