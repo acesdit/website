@@ -1,16 +1,18 @@
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 import './globals.css'
 import { Inter, Oswald } from 'next/font/google'
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap'
+  display: 'swap',
 })
 
 const oswald = Oswald({
   subsets: ['latin'],
   variable: '--font-oswald',
-  display: 'swap'
+  display: 'swap',
 })
 
 export const metadata = {
@@ -21,7 +23,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${oswald.variable} font-body`}>{children}</body>
+      <body className={`${inter.variable} ${oswald.variable} font-body`}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
