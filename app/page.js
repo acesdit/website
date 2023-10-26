@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Hero from './components/Hero';
 import BlogCard from './components/BlogCard.js';
 import EventsSection from './components/EventsSection';
+import WhoAreWeSection from './components/WhoAreWeSection';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       {/* <Hero /> */}
       {/* Who are we section */}
 
+      <WhoAreWeSection/>
+
       {/* Stats section */}
       {/* <StatsSection/> */}
       {/* <Home /> */}
@@ -21,7 +24,7 @@ function App() {
       {/* <Event_Section/> */}
       {/* <EventsSection/> */}
 
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }
