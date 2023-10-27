@@ -45,12 +45,6 @@ function Navbar() {
       <div className="container mx-auto flex justify-between items-center p-4 md:p-6">
         {/* Logo */}
         <Link href="/" className="h-[30px]">
-          {/* <Image
-            src="/logo-text.svg"
-            alt=""
-            width={120}
-            height={30}
-          /> */}
           {/* IGNORE SVG CODE */}
           <svg
             className="with-text"

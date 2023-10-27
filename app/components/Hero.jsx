@@ -17,7 +17,6 @@ function Hero() {
             </p>
           </div>
           <div className="md:w-7/12">
-            {/* <Image src="/images/phoenix.svg" width={628} height={628} /> */}
             <Image
               className="relative top-[-80px] sm:top-0"
               src={phoenix}

@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 /* DEBUG LAYOUTS */
-* {
+/* * {
   border: red solid 1px;
-}
+} */
 
 :root {
   --container-width: 1200px; /*For using with bleeding layout*/
