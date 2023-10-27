@@ -11,12 +11,10 @@ import WhoAreWeSection from './components/WhoAreWeSection';
 function App() {
   return (
     <>
-      <Navbar />
       <Hero />
       <WhoAreWeSection/>
       <StatsSection/>
       <EventsSection/>
-      <Footer/>
     </>
   )
 }

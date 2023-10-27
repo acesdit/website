@@ -23,7 +23,7 @@
 }
 
 .first-element {
-  @apply pt-0 md:pt-24;
+  @apply pt-0;
 }
 
 nav.nav-middle {
