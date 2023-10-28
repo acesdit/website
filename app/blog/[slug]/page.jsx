@@ -12,7 +12,7 @@ function BlogPost({ params }) {
             <div className="flex items-center pt-20 pb-4 text-white">
               <span className="text-lg">
                 <span className="uppercase font-title font-medium">Blog /</span>{' '}
-                Celebrating ISRO's Journey
+                Celebrating ISRO&apos;s Journey
               </span>
             </div>
           </div>
@@ -21,7 +21,7 @@ function BlogPost({ params }) {
 
       <div className="container mx-auto p-4 md:px-6 pt-20">
         <h1 className="font-title font-medium uppercase text-5xl pb-4">
-          Celebrating ISRO's Journey
+          Celebrating ISRO&apos;s Journey
         </h1>
         <div>
           <span className="pr-16">11 Sep 2023</span>
@@ -36,6 +36,7 @@ function BlogPost({ params }) {
             src="/images/blogimg.png"
             width={737}
             height={491}
+            alt="A rocket"
           />
           <div className="bg-[#ebebeb] p-6 rounded-xl">
             <h3 className="font-title uppercase font-medium text-lg text-primary pb-1">
