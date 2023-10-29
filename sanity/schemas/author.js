@@ -18,6 +18,62 @@ export const author = {
       },
     },
     {
+      name: 'email',
+      title: 'Email',
+      type: 'email'
+    },
+    // {
+    //   name: 'clubPosts',
+    //   title: 'Club Posts',
+    //   type: 'array',
+    //   of: [{type: 'reference', to: {type: 'clubPost'}}],
+    // },
+    {
+      title: 'Club Posts',
+      name: 'clubPosts',
+      type: 'array',
+      of: [{
+        type: 'object',
+        fields: [
+          {
+            name: 'position',
+            title: 'Position',
+            type: 'string',
+          },
+          {
+            name: 'year',
+            title: 'Tenure',
+            type: 'date',
+            options: {
+              dateFormat: 'YYYY',
+              calendarTodayLabel: 'Today'
+            }
+          },
+        ]
+      }]
+    },
+    // {
+    //   title: 'Club Posts',
+    //   name: 'clubPosts',
+    //   type: 'object',
+    //   fields: [
+    //     {
+    //       name: 'position',
+    //       title: 'Position',
+    //       type: 'string',
+    //     },
+    //     {
+    //       name: 'year',
+    //       title: 'Tenure',
+    //       type: 'date',
+    //       options: {
+    //         dateFormat: 'YYYY',
+    //         calendarTodayLabel: 'Today'
+    //       }
+    //     },
+    //   ]
+    // },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -40,7 +96,7 @@ export const author = {
         {
           title: 'Block',
           type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
+          styles: [{ title: 'Normal', value: 'normal' }],
           lists: [],
         },
       ],
