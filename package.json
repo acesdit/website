@@ -16,6 +16,7 @@
     "eslint-config-next": "13.5.1",
     "next": "13.5.1",
     "next-sanity": "^5.5.8",
+    "nextjs-toploader": "^1.5.3",
     "postcss": "8.4.30",
     "react": "18.2.0",
     "react-countup": "^6.4.2",
