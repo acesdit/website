@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import CountUp from 'react-countup'
+import IncrementNumber from './IncrementNumber'
 
 function StatsSection() {
   return (
@@ -15,7 +17,7 @@ function StatsSection() {
         </div>
         <div className="md:w-1/2 py-12 md:pr-44 flex flex-col justify-center">
           <h2 className="main-head">Sparking innovation among students</h2>
-          <p className='text-lg'>
+          <p className="text-lg">
             Association of Computer Engineering Students is the departmental
             club of Department of Computer Engineering at Dr. D. Y. Patil
             Institute of Technology, Pimpri
@@ -25,19 +27,19 @@ function StatsSection() {
       <div className="container mx-auto px-16 flex flex-col md:flex-row text-center border-t-4 border-black">
         <div className="md:w-1/3 py-12">
           <h3 className="font-title font-medium text-7xl pb-2">
-            <span>108</span>+
+            <IncrementNumber number={108} />
           </h3>
           <p>Events organized</p>
         </div>
         <div className="md:w-1/3 py-12">
           <h3 className="font-title font-medium text-7xl pb-2">
-            <span>24,000</span>+
+            <IncrementNumber number={24000} />
           </h3>
           <p>Participants</p>
         </div>
         <div className="md:w-1/3 py-12">
           <h3 className="font-title font-medium text-7xl pb-2">
-            <span>470</span>+
+            <IncrementNumber number={470} />
           </h3>
           <p>Members</p>
         </div>

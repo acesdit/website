@@ -1,8 +1,8 @@
 import {blockContent} from './schemas/blockContent'
-import {category} from './schemas/category'
+import {clubPost} from './schemas/clubPost'
 import {post} from './schemas/post'
 import {author} from './schemas/author'
 
 export const schema = {
-  types: [post, author, blockContent],
+  types: [post, author, clubPost, blockContent],
 }
