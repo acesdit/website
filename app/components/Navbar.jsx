@@ -9,9 +9,9 @@ function Navbar() {
   const routes = [
     { label: 'Home', route: '/' },
     { label: 'Blog', route: '/blog' },
-    { label: 'Events', route: '/' },
-    { label: 'Team', route: '/' },
-    { label: 'Contact', route: '/' },
+    { label: 'Events', route: '/construction' },
+    { label: 'Team', route: '/construction' },
+    { label: 'Contact', route: '/construction' },
   ]
 
   const [isOpen, setIsOpen] = useState(false)
@@ -43,7 +43,7 @@ function Navbar() {
   }, [pathName])
 
   return (
-    <nav className="w-full fixed top-0 z-40 text-white transition-colors">
+    <nav className="w-full fixed top-0 z-40 text-white transition-colors nav-middle">
       <div className="container mx-auto flex justify-between items-center p-4 md:p-6">
         {/* Logo */}
         <Link href="/" className="h-[30px]">
