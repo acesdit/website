@@ -1,3 +1,4 @@
+import NextTopLoader from 'nextjs-toploader'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import './globals.css'
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${oswald.variable} font-body`}>
+        <NextTopLoader color='#A07C38' showSpinner={false}/>
         <Navbar />
         {children}
         <Footer />
