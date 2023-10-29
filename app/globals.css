@@ -19,7 +19,6 @@
 
 .hero-container {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url(/images/hero.jpg);
-  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)); */
 }
 
 .first-element {
