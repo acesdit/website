@@ -14,7 +14,7 @@ function EventsSection() {
         <h2 className="main-head pb-0">Events</h2>
         <Link
           href="/"
-          className="uppercase text-base font-semibold px-3 py-2 bg-secondary text-white rounded-lg"
+          className="btn-secondary"
         >{`Explore all ->`}</Link>
       </div>
       <div className="container mx-auto px-4 md:px-6 pt-4 pb-20">

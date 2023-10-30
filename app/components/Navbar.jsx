@@ -43,7 +43,7 @@ function Navbar() {
   }, [pathName])
 
   return (
-    <nav className="w-full fixed top-0 z-40 text-white transition-colors nav-middle">
+    <nav className="w-full fixed top-0 z-20 text-white transition-colors nav-middle">
       <div className="container mx-auto flex justify-between items-center p-4 md:p-6">
         {/* Logo */}
         <Link href="/" className="h-[30px]">
@@ -67,7 +67,7 @@ function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed top-0 right-0 bg-white text-black h-screen w-5/6 px-4 py-6 transition-transform z-50 shadow-2xl ${
+        className={`fixed top-0 right-0 bg-white text-black h-screen w-5/6 px-4 py-6 transition-transform z-40 shadow-2xl ${
           !isOpen ? 'translate-x-full' : ''
         }`}
       >

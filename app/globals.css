@@ -19,6 +19,7 @@
 
 .hero-container {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url(/images/hero.jpg);
+  background-color: #7D111C;
 }
 
 .first-element {
@@ -84,4 +85,22 @@ svg.with-text {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.btn-primary {
+  @apply uppercase text-base font-semibold px-3 py-2 bg-primary text-white rounded-lg;
+}
+
+.btn-secondary {
+  @apply uppercase text-base font-semibold px-3 py-2 bg-secondary text-white rounded-lg;
+}
+
+.yellow-stripe {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffcc00,
+    #ffcc00 15px,
+    #000 15px,
+    #000 30px
+  );
 }

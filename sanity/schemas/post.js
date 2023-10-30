@@ -18,10 +18,10 @@ export const post = {
       },
     },
     {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
+      name: 'authors',
+      title: 'Authors',
+      type: 'array',
+      of: [{ name: 'Club Members', type: 'reference', to: { type: 'member' } }, { name: 'Volunteer', type: 'object', fields: [{ name: 'volunteerName', title: 'Volunteer Name', type: 'string' }] }]
     },
     {
       name: 'mainImage',
@@ -56,15 +56,15 @@ export const post = {
     },
   ],
 
-  preview: {
-    select: {
-      title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
-    },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
-    },
-  },
+  // preview: {
+  //   select: {
+  //     title: 'title',
+  //     author: 'author.name',
+  //     media: 'mainImage',
+  //   },
+  // prepare(selection) {
+  //   const {author} = selection
+  //   return {...selection, subtitle: author && `by ${author}`}
+  // },
+  // },
 }
