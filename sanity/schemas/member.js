@@ -1,6 +1,6 @@
-export const author = {
-  name: 'author',
-  title: 'Author',
+export const member = {
+  name: 'member',
+  title: 'Member',
   type: 'document',
   fields: [
     {
@@ -22,12 +22,13 @@ export const author = {
       title: 'Email',
       type: 'email'
     },
-    // {
-    //   name: 'clubPosts',
-    //   title: 'Club Posts',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: {type: 'clubPost'}}],
-    // },
+    {
+      name: 'membershipId',
+      title: 'Membership ID',
+      type: 'string',
+      description: 'Only Uppercase alphabets & numbers allowed',
+      validation: Rule => Rule.required().regex('^[A-Z0-9]+$')
+    },
     {
       title: 'Club Posts',
       name: 'clubPosts',
@@ -52,30 +53,9 @@ export const author = {
         ]
       }]
     },
-    // {
-    //   title: 'Club Posts',
-    //   name: 'clubPosts',
-    //   type: 'object',
-    //   fields: [
-    //     {
-    //       name: 'position',
-    //       title: 'Position',
-    //       type: 'string',
-    //     },
-    //     {
-    //       name: 'year',
-    //       title: 'Tenure',
-    //       type: 'date',
-    //       options: {
-    //         dateFormat: 'YYYY',
-    //         calendarTodayLabel: 'Today'
-    //       }
-    //     },
-    //   ]
-    // },
     {
       name: 'image',
-      title: 'Image',
+      title: 'Profile photo',
       type: 'image',
       options: {
         hotspot: true,
@@ -101,6 +81,40 @@ export const author = {
         },
       ],
     },
+    {
+      type: 'object',
+      name: 'socials',
+      description: 'Enter URLs to your following profiles',
+      fieldsets: [
+        {name: 'social', title: 'Social media handles'}
+      ],
+      fields: [
+        {
+          title: 'Twitter(Now X)',
+          name: 'x',
+          type: 'string',
+          fieldset: 'social'
+        },
+        {
+          title: 'Instagram',
+          name: 'instagram',
+          type: 'string',
+          fieldset: 'social'
+        },
+        {
+          title: 'LinkedIn',
+          name: 'linkedIn',
+          type: 'string',
+          fieldset: 'social'
+        },
+        {
+          title: 'Github',
+          name: 'github',
+          type: 'string',
+          fieldset: 'social'
+        }
+      ]
+    }
   ],
   preview: {
     select: {

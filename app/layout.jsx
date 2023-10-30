@@ -4,6 +4,8 @@ import Navbar from './components/Navbar'
 import './globals.css'
 import { Inter, Oswald } from 'next/font/google'
 
+import ConstructionModal from './components/ConstructionModal'
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -26,6 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.variable} ${oswald.variable} font-body`}>
         <NextTopLoader color='#A07C38' showSpinner={false}/>
+        <ConstructionModal/>
         <Navbar />
         {children}
         <Footer />
