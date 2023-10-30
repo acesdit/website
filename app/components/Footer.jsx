@@ -13,13 +13,13 @@ const Footer = () => {
 
     const others = [{
         display: 'Verify Membership',
-        link: 'https://www.instagram.com/aces.dit/'
+        link: '/construction'
     }, {
         display: 'Privacy Policy',
-        link: 'https://www.linkedin.com/company/acesdit/'
+        link: '#'
     }, {
         display: 'Sitemap',
-        link: 'https://www.linkedin.com/company/acesdit/'
+        link: '#'
     }];
 
     return (
