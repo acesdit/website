@@ -50,6 +50,13 @@ export const post = {
       type: 'datetime',
     },
     {
+      name: 'summary',
+      type: 'text',
+      title: 'Post Summary',
+      rows: 3,
+      validation: Rule => Rule.required().max(400).error("Only 400 characters are allowed at max")
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent',

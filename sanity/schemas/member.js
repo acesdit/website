@@ -27,7 +27,6 @@ export const member = {
       title: 'Membership ID',
       type: 'string',
       description: 'Only Uppercase alphabets & numbers allowed',
-      validation: Rule => Rule.required().regex('^[A-Z0-9]+$')
     },
     {
       title: 'Club Posts',
@@ -70,16 +69,10 @@ export const member = {
     },
     {
       name: 'bio',
+      type: 'text',
       title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: [],
-        },
-      ],
+      rows: 5,
+      validation: Rule => Rule.required().max(600).error("Only 600 characters are allowed at max")
     },
     {
       type: 'object',
