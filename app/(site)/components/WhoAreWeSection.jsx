@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import teamImg from '../../public/images/team.png'
+import teamImg from '../../../public/images/team.png'
 
 function WhoAreWeSection() {
   return (
