@@ -29,6 +29,15 @@ async function BlogPost({ params }) {
   const slug = params.slug
 
   const post = await getPost(slug)
+  let authorString = "";
+  const numAuthors = post.authors.length
+  post.authors.forEach((author, index) => {
+    authorString += author.name
+    if (index < numAuthors-2)
+      authorString += ", "
+    if (index === numAuthors-2)
+      authorString += " & "
+  })
 
   return (
     <>
@@ -49,13 +58,13 @@ async function BlogPost({ params }) {
         <h1 className="font-title font-medium uppercase text-5xl pb-4">
           {post.title}
         </h1>
-        <div>
-          <time dateTime={post.publishedAt} className="pr-16">
+        <div className='flex flex-col md:flex-row gap-4'>
+          <time dateTime={post.publishedAt}>
             {DateTime.fromISO(post.publishedAt).toLocaleString(
               DateTime.DATE_MED
             )}
           </time>
-          <span>Jatin Sharma & Anushka Sao</span>
+          <p>{authorString}</p>
         </div>
       </div>
 
@@ -94,10 +103,9 @@ async function BlogPost({ params }) {
             </h5>
             <hr className="border-2 border-black mb-4" />
             <div className="flex gap-6 flex-wrap">
-              <Author name="Akshay Bade" />
-              <Author name="Maithili Kulkarni" />
-              <Author name="Prakhar Pandey" />
-              <Author name="Sahil Srinivas" />
+              {post.authors.map(author => (
+                  <Author key={author.slug} name={author.name} slug={author.slug} imageUrl={urlForImage(author.image).width(50).height(50).url()}/>
+              ))}
             </div>
           </div>
         </div>

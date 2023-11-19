@@ -1,9 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 
-function Author({name}) {
+function Author({name, slug, imageUrl}) {
   return (
-    <Link href={'/'} className="flex items-center gap-2 text-primary"><Image className="rounded-full" src='https://picsum.photos/id/360/50' height={50} width={50}/>{name}</Link>
+    <Link href={'/'} className="flex items-center gap-2 text-primary"><Image className="rounded-full" src={imageUrl} height={50} width={50}/>{name}</Link>
   )
 }
 
