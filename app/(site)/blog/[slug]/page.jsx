@@ -1,5 +1,5 @@
-import Author from '@/app/components/Author'
-import NewsletterCallout from '@/app/components/NewsletterCallout'
+import Author from '../../components/Author'
+import NewsletterCallout from '../../components/NewsletterCallout'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 
