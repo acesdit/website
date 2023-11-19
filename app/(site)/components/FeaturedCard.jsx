@@ -22,7 +22,7 @@ export const BlogCard = ({
         <h3 className="font-title uppercase font-medium text-4xl leading-snug">
           {title}
         </h3>
-        <p className="font-title font-light text-2xl leading-snug py-2">
+        <p className="font-title font-light text-2xl leading-snug py-2 line-clamp-2">
           {description}
         </p>
         <time dateTime={creationDate} className="font-light text-lg">{DateTime.fromISO(creationDate).toLocaleString(DateTime.DATE_MED)}</time>
