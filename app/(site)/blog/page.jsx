@@ -56,42 +56,6 @@ async function Page() {
             linkTo={`/blog/${post.slug}`}
           />
         ))}
-
-        <BlogCard
-          title="Why You Should Stare At Rocks"
-          description="Whereas disregard and contempt for human rights have resulted"
-          creationDate="29th Feb 2023"
-          imageURL="https://picsum.photos/422/300.jpg"
-          linkTo="/blog/something"
-        />
-        <BlogCard
-          title="Why You Should Stare At Rocks"
-          description="Whereas disregard and contempt for human rights have resulted"
-          creationDate="29th Feb 2023"
-          imageURL="https://picsum.photos/422/300.jpg"
-          linkTo="/blog/something"
-        />
-        <BlogCard
-          title="Why You Should Stare At Rocks"
-          description="Whereas disregard and contempt for human rights have resulted"
-          creationDate="29th Feb 2023"
-          imageURL="https://picsum.photos/422/300.jpg"
-          linkTo="/blog/something"
-        />
-        <BlogCard
-          title="Why You Should Stare At Rocks"
-          description="Whereas disregard and contempt for human rights have resulted"
-          creationDate="29th Feb 2023"
-          imageURL="https://picsum.photos/422/300.jpg"
-          linkTo="/blog/something"
-        />
-        <BlogCard
-          title="Why You Should Stare At Rocks"
-          description="Whereas disregard and contempt for human rights have resulted"
-          creationDate="29th Feb 2023"
-          imageURL="https://picsum.photos/422/300.jpg"
-          linkTo="/blog/something"
-        />
       </section>
     </>
   )

@@ -1,28 +1,31 @@
 import Author from '../../components/Author'
 import NewsletterCallout from '../../components/NewsletterCallout'
 import Image from 'next/image'
-import { useParams } from 'next/navigation'
 import { getPost } from '@/sanity/lib/client'
 import { PortableText } from '@portabletext/react'
 import { DateTime } from 'luxon'
-import urlBuilder from '@sanity/image-url'
+import { urlForImage } from '@/sanity/lib/image'
+import { getImageDimensions } from '@sanity/asset-utils'
 
-const SampleImageComponent = ({value}) => {
-  const {width, height} = getImageDimensions(value)
+const SampleImageComponent = ({ value }) => {
+  const { width, height } = getImageDimensions(value)
   return (
-    <img
-      src={urlBuilder().image(value).width(800).fit('max').auto('format').url()}
-      alt={value.alt || ' '}
-      loading="lazy"
-      style={{
-        aspectRatio: width / height,
-      }}
-    />
+    <figure className="w-fit mt-12 mb-12 mx-auto">
+      <img
+        className="rounded-xl"
+        src={urlForImage(value).width(700).fit('max').auto('format').url()}
+        alt={value.alt || ' '}
+        loading="lazy"
+        style={{
+          aspectRatio: width / height,
+        }}
+      />
+      <figcaption className='text-center italic'>{value.alt}</figcaption>
+    </figure>
   )
 }
 
 async function BlogPost({ params }) {
-
   const slug = params.slug
 
   const post = await getPost(slug)
@@ -47,7 +50,11 @@ async function BlogPost({ params }) {
           {post.title}
         </h1>
         <div>
-          <time dateTime={post.publishedAt} className="pr-16">{DateTime.fromISO(post.publishedAt).toLocaleString(DateTime.DATE_MED)}</time>
+          <time dateTime={post.publishedAt} className="pr-16">
+            {DateTime.fromISO(post.publishedAt).toLocaleString(
+              DateTime.DATE_MED
+            )}
+          </time>
           <span>Jatin Sharma & Anushka Sao</span>
         </div>
       </div>
@@ -56,7 +63,8 @@ async function BlogPost({ params }) {
         <div className="md:w-3/4 flex flex-col gap-6">
           <Image
             className="w-full rounded-xl"
-            src="/images/blogimg.png"
+            // src="/images/blogimg.png"
+            src={urlForImage(post.mainImage).width(737).fit('max').auto('format').url()}
             width={737}
             height={491}
             alt="A rocket"
@@ -65,74 +73,19 @@ async function BlogPost({ params }) {
             <h3 className="font-title uppercase font-medium text-lg text-primary pb-1">
               TL;DR;
             </h3>
-            <p className="italic">
-              {post.summary}
-            </p>
+            <p className="italic">{post.summary}</p>
           </div>
 
           {/* Block Content */}
-          {/* <div>
-            <h4 className="text-primary text-2xl font-semibold pb-1">
-              Introduction
-            </h4>
-            <p className="pb-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              iaculis lacus a purus lacinia aliquam. Duis volutpat mauris
-              tellus, sed cursus quam consequat a. Donec pellentesque faucibus
-              est aliquet pellentesque. Quisque non ex dictum, faucibus elit
-              non, maximus lacus. Phasellus rutrum venenatis nunc, ut eleifend
-              metus condimentum a. Proin posuere ipsum quis libero faucibus,
-              vitae bibendum lacus laoreet. Sed tempor mauris suscipit bibendum
-              imperdiet. Pellentesque habitant morbi tristique senectus et netus
-              et malesuada fames ac turpis egestas. Donec egestas ornare orci,
-              ut laoreet turpis ultrices non. Vestibulum dapibus ullamcorper ex
-              in gravida.
-            </p>
-            <h4 className="text-primary text-2xl font-semibold pb-1">
-              Mangalyaan - Details
-            </h4>
-            <p className="pb-5">
-              Nam sed magna accumsan, tincidunt turpis quis, ultrices magna. Ut
-              id volutpat ante. Phasellus vestibulum dapibus lorem vel dapibus.
-              Mauris eu lectus facilisis, elementum nisl vel, faucibus nibh.
-              Etiam a lectus tortor. Praesent vel rutrum erat. Donec nulla diam,
-              bibendum at luctus eu, finibus a felis. Quisque pretium mollis
-              ornare. Curabitur quis aliquam mi. Sed mattis lorem massa, eget
-              eleifend tortor porttitor at. Sed vel turpis vehicula, tincidunt
-              tortor ac, tristique felis. Maecenas volutpat dui augue, ut congue
-              justo luctus quis. Donec vitae ipsum id velit interdum vulputate.
-              Duis sed congue sapien. Praesent id felis vel augue aliquet
-              pellentesque nec quis odio.
-            </p>
-            <h4 className="text-primary text-2xl font-semibold pb-1">
-              Chandrayaan III
-            </h4>
-            <p className="pb-5">
-              Nam sed magna accumsan, tincidunt turpis quis, ultrices magna. Ut
-              id volutpat ante. Phasellus vestibulum dapibus lorem vel dapibus.
-              Mauris eu lectus facilisis, elementum nisl vel, faucibus nibh.
-              Etiam a lectus tortor. Praesent vel rutrum erat. Donec nulla diam,
-              bibendum at luctus eu, finibus a felis. Quisque pretium mollis
-              ornare. Curabitur quis aliquam mi. Sed mattis lorem massa, eget
-              eleifend tortor porttitor at. Sed vel turpis vehicula, tincidunt
-              tortor ac, tristique felis. Maecenas volutpat dui augue, ut congue
-              justo luctus quis. Donec vitae ipsum id velit interdum vulputate.
-              Duis sed congue sapien. Praesent id felis vel augue aliquet
-              pellentesque nec quis odio.
-            </p>
-            <h4 className="text-primary text-2xl font-semibold pb-1">
-              Conclusion
-            </h4>
-            <p className="pb-5">
-              Mauris lobortis ipsum non massa malesuada, vel venenatis felis
-              bibendum. Suspendisse facilisis ornare sem id egestas. Sed sem mi,
-              sodales tempor purus quis, lacinia hendrerit sem. Phasellus vitae
-              volutpat augue. Sed tempor quam vitae magna accumsan lobortis. Ut
-              suscipit magna eu pretium ullamcorper. Mauris in auctor tortor.
-            </p>
-          </div> */}
           <div className="blog-post-content">
-            <PortableText value={post.body}/>
+            <PortableText
+              value={post.body}
+              components={{
+                types: {
+                  image: SampleImageComponent,
+                },
+              }}
+            />
           </div>
 
           <div>
@@ -140,11 +93,11 @@ async function BlogPost({ params }) {
               Authors
             </h5>
             <hr className="border-2 border-black mb-4" />
-            <div className='flex gap-6 flex-wrap'>
-            <Author name="Akshay Bade"/>
-            <Author name="Maithili Kulkarni"/>
-            <Author name="Prakhar Pandey"/>
-            <Author name="Sahil Srinivas"/>
+            <div className="flex gap-6 flex-wrap">
+              <Author name="Akshay Bade" />
+              <Author name="Maithili Kulkarni" />
+              <Author name="Prakhar Pandey" />
+              <Author name="Sahil Srinivas" />
             </div>
           </div>
         </div>
