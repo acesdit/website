@@ -1,7 +1,7 @@
 import NextTopLoader from 'nextjs-toploader'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
-import './globals.css'
+import '../globals.css'
 import { Inter, Oswald } from 'next/font/google'
 
 import ConstructionModal from './components/ConstructionModal'

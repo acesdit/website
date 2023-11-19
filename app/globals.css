@@ -104,3 +104,31 @@ svg.with-text {
     #000 30px
   );
 }
+
+.blog-post-content * {
+  @apply my-2;
+}
+
+.blog-post-content p {
+  @apply mb-6;
+}
+
+.blog-post-content h1 {
+  @apply text-primary text-3xl font-semibold;
+}
+
+.blog-post-content h2 {
+  @apply text-primary text-2xl font-semibold;
+}
+
+.blog-post-content h3 {
+  @apply text-primary text-xl font-semibold;
+}
+
+.blog-post-content h4 {
+  @apply text-primary text-lg font-semibold;
+}
+
+.blog-post-content figure {
+  @apply my-8 drop-shadow;
+}

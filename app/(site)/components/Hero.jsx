@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import phoenix from '../../public/images/phoenix.svg'
+import phoenix from '../../../public/images/phoenix.svg'
 
 function Hero() {
   return (
