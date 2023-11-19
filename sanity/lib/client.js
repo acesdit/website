@@ -21,3 +21,20 @@ export const getPosts = async () => {
     }`
   )
 }
+
+export const getPost = async (slug) => {
+  return client.fetch(
+    groq`*[_type == "post" && slug.current == $slug][0] {
+      _id,
+      title,
+      publishedAt,
+      'authors': authors[]{
+        _type == 'Club Members' => @->{name, slug, image},
+      },
+      "slug": slug.current,
+      summary,
+      body,
+      mainImage,
+    }`, { slug }
+  )
+}

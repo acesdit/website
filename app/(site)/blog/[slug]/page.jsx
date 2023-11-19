@@ -2,8 +2,31 @@ import Author from '../../components/Author'
 import NewsletterCallout from '../../components/NewsletterCallout'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
+import { getPost } from '@/sanity/lib/client'
+import { PortableText } from '@portabletext/react'
+import { DateTime } from 'luxon'
+import urlBuilder from '@sanity/image-url'
 
-function BlogPost({ params }) {
+const SampleImageComponent = ({value}) => {
+  const {width, height} = getImageDimensions(value)
+  return (
+    <img
+      src={urlBuilder().image(value).width(800).fit('max').auto('format').url()}
+      alt={value.alt || ' '}
+      loading="lazy"
+      style={{
+        aspectRatio: width / height,
+      }}
+    />
+  )
+}
+
+async function BlogPost({ params }) {
+
+  const slug = params.slug
+
+  const post = await getPost(slug)
+
   return (
     <>
       <div className="hero-container nav-target">
@@ -12,7 +35,7 @@ function BlogPost({ params }) {
             <div className="flex items-center pt-20 pb-4 text-white">
               <span className="text-lg">
                 <span className="uppercase font-title font-medium">Blog /</span>{' '}
-                Celebrating ISRO&apos;s Journey
+                {post.title}
               </span>
             </div>
           </div>
@@ -21,10 +44,10 @@ function BlogPost({ params }) {
 
       <div className="container mx-auto p-4 md:px-6 pt-20">
         <h1 className="font-title font-medium uppercase text-5xl pb-4">
-          Celebrating ISRO&apos;s Journey
+          {post.title}
         </h1>
         <div>
-          <span className="pr-16">11 Sep 2023</span>
+          <time dateTime={post.publishedAt} className="pr-16">{DateTime.fromISO(post.publishedAt).toLocaleString(DateTime.DATE_MED)}</time>
           <span>Jatin Sharma & Anushka Sao</span>
         </div>
       </div>
@@ -43,16 +66,12 @@ function BlogPost({ params }) {
               TL;DR;
             </h3>
             <p className="italic">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Blanditiis temporibus corporis quae consectetur aperiam omnis
-              nobis itaque saepe laboriosam minus cupiditate illum culpa,
-              ratione cumque? Deserunt nesciunt velit inventore ullam nulla
-              dolores.
+              {post.summary}
             </p>
           </div>
 
           {/* Block Content */}
-          <div>
+          {/* <div>
             <h4 className="text-primary text-2xl font-semibold pb-1">
               Introduction
             </h4>
@@ -111,6 +130,9 @@ function BlogPost({ params }) {
               volutpat augue. Sed tempor quam vitae magna accumsan lobortis. Ut
               suscipit magna eu pretium ullamcorper. Mauris in auctor tortor.
             </p>
+          </div> */}
+          <div className="blog-post-content">
+            <PortableText value={post.body}/>
           </div>
 
           <div>
