@@ -6,6 +6,7 @@ import { PortableText } from '@portabletext/react'
 import { DateTime } from 'luxon'
 import { urlForImage } from '@/sanity/lib/image'
 import { getImageDimensions } from '@sanity/asset-utils'
+import Link from 'next/link'
 
 const SampleImageComponent = ({ value }) => {
   const { width, height } = getImageDimensions(value)
@@ -46,7 +47,7 @@ async function BlogPost({ params }) {
           <div className="container mx-auto p-4 md:px-6">
             <div className="flex items-center pt-20 pb-4 text-white">
               <span className="text-lg">
-                <span className="uppercase font-title font-medium">Blog /</span>{' '}
+                <span className="uppercase font-title font-medium"><Link className="transition-colors hover:text-primary" href="/blog">Blog</Link> /</span>{' '}
                 {post.title}
               </span>
             </div>
