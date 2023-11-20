@@ -111,7 +111,10 @@ async function BlogPost({ params }) {
           </div>
         </div>
         <div className="md:w-1/4">
+          <div className='sticky top-[80px]'>
           <NewsletterCallout />
+
+          </div>
         </div>
       </div>
     </>
