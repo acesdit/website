@@ -7,11 +7,13 @@ export const member = {
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: Rule => Rule.required(),
       options: {
         source: 'name',
         maxLength: 96,
@@ -20,18 +22,21 @@ export const member = {
     {
       name: 'email',
       title: 'Email',
-      type: 'email'
+      type: 'email',
+      validation: Rule => Rule.required()
     },
     {
       name: 'membershipId',
       title: 'Membership ID',
       type: 'string',
       description: 'Only Uppercase alphabets & numbers allowed',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Club Posts',
       name: 'clubPosts',
       type: 'array',
+      validation: Rule => Rule.required(),
       of: [{
         type: 'object',
         fields: [
@@ -39,6 +44,17 @@ export const member = {
             name: 'position',
             title: 'Position',
             type: 'string',
+            validation: Rule => Rule.required()
+          },
+          {
+            name: 'category',
+            title: 'Category',
+            type: 'string',
+            options: {
+              list: ['core', 'senior', 'junior', 'faculty'],
+              initialValue: 'junior',
+              validation: Rule => Rule.required()
+            }
           },
           {
             name: 'year',
@@ -46,7 +62,8 @@ export const member = {
             type: 'date',
             options: {
               dateFormat: 'YYYY',
-              calendarTodayLabel: 'Today'
+              calendarTodayLabel: 'Today',
+              validation: Rule => Rule.required()
             }
           },
         ]
@@ -56,6 +73,7 @@ export const member = {
       name: 'image',
       title: 'Profile photo',
       type: 'image',
+      validation: Rule => Rule.required(),
       options: {
         hotspot: true,
       },

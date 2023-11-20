@@ -10,7 +10,7 @@ function Navbar() {
     { label: 'Home', route: '/' },
     { label: 'Blog', route: '/blog' },
     { label: 'Events', route: '/construction' },
-    { label: 'Team', route: '/construction' },
+    { label: 'Members', route: '/members' },
     { label: 'Contact', route: '/construction' },
   ]
 
