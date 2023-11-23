@@ -6,7 +6,7 @@ const client = createClient({
   apiVersion,
   dataset,
   projectId,
-  useCdn,
+  useCdn
 })
 
 export const getPosts = async () => {
@@ -37,4 +37,19 @@ export const getPost = async (slug) => {
       mainImage,
     }`, { slug }
   )
+}
+
+// export const createMember = async (doc) => {
+//   client.create(doc).then((res) => {
+//     console.log(`Member created with document ID ${res._id}`)
+//   })
+// }
+
+export const getMembers = async () => {
+  return client.fetch(groq`*[_type == "member"]{
+    name,
+    "slug": slug.current,
+    clubPosts,
+    image
+  }`)
 }
