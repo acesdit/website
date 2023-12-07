@@ -63,7 +63,6 @@ async function BlogPost({ params }) {
         <div className="md:w-3/4 flex flex-col gap-6">
           <Image
             className="w-full rounded-xl"
-            // src="/images/blogimg.png"
             src={urlForImage(post.mainImage).width(737).fit('max').auto('format').url()}
             width={737}
             height={491}
