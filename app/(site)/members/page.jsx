@@ -15,7 +15,7 @@ const MemberCard = ({ member }) => {
       }`}
     >
       <Image
-        className="rounded-full border p-1 border-primary transition-all group-hover:border-[5px]"
+        className="rounded-full border-[2px] p-1 border-primary transition-all group-hover:border-[5px]"
         src={`${member.image ? urlForImage(member.image).width(400).height(400).url() : `https://picsum.photos/200/200`}`}
         width={160}
         height={160}

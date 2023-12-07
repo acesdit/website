@@ -51,5 +51,7 @@ export const getMembers = async () => {
     "slug": slug.current,
     clubPosts,
     image
-  }`)
+  }`, {next: {
+    revalidate: 86400
+  }})
 }
