@@ -52,6 +52,6 @@ export const getMembers = async () => {
     clubPosts,
     image
   }`, {next: {
-    revalidate: 86400
+    revalidate: 1
   }})
 }
