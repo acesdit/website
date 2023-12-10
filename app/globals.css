@@ -32,6 +32,18 @@ nav.nav-middle {
   @apply text-black;
 }
 
+.nav-link {
+  transition: all 150ms ease;
+}
+
+.nav-link:hover {
+  text-shadow: white 0 0 18px;
+}
+
+nav.nav-middle .nav-link {
+  @apply hover:text-primary;
+}
+
 svg.with-text {
   fill: currentColor;
 }

@@ -54,7 +54,7 @@ function Navbar() {
         <ul className="hidden md:flex gap-8 text-base font-semibold uppercase">
           {routes.map((route) => (
             <li key={route.label}>
-              <Link href={route.route}>{route.label}</Link>
+              <Link className='nav-link' href={route.route}>{route.label}</Link>
             </li>
           ))}
         </ul>
