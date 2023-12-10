@@ -45,13 +45,27 @@ export const getPost = async (slug) => {
 //   })
 // }
 
-export const getMembers = async () => {
+export const getMembers = async (slug) => {
   return client.fetch(groq`*[_type == "member"]{
     name,
     "slug": slug.current,
     clubPosts,
     image
   }`, {next: {
-    revalidate: 86400
+    revalidate: 3600
   }})
+}
+
+export const getMember = async (slug) => {
+  return client.fetch(
+      groq`*[_type == "member" && slug.current == $slug][0] {
+      name,
+      bio,
+      clubPosts,
+      socials,
+      image
+    }`, { slug, next: {
+      revalidate: 3600
+    } }
+  )
 }
