@@ -7,7 +7,7 @@ const getFont = async () => {
     // console.log(myUrl.href)
     const response = await fetch(
         // new URL('../../../public/Oswald-Semibold.ttf', import.meta.url)
-        new URL('/oswald.ttf', import.meta.url)
+        new URL('/oswald.ttf', 'https://acesdit-alpha.vercel.app')
     );
     // const response = await fetch(`${protocol}//${host}/Oswald-SemiBold.ttf`)
     // const response = await fetch(`http://localhost:3000/Oswald-SemiBold.ttf`)
