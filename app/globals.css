@@ -100,11 +100,11 @@ svg.with-text {
 }
 
 .btn-primary {
-  @apply uppercase text-base font-semibold px-3 py-2 bg-primary text-white rounded-lg;
+  @apply uppercase text-base font-semibold px-3 py-2 bg-primary text-white rounded-lg transition-all hover:brightness-90;
 }
 
 .btn-secondary {
-  @apply uppercase text-base font-semibold px-3 py-2 bg-secondary text-white rounded-lg;
+  @apply uppercase text-base font-semibold px-3 py-2 bg-secondary text-white rounded-lg transition-all hover:brightness-90;
 }
 
 .yellow-stripe {

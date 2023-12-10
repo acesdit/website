@@ -23,7 +23,7 @@ async function Member({params}) {
             <div className="container mx-auto p-4 md:px-6 flex flex-col md:flex-row gap-8 py-16 lg:py-24">
                 <div className='md:w-1/3 flex flex-col items-center'>
                     <Image
-                        className="rounded-full border-[2px] p-1 border-primary transition-all w-[80%]"
+                        className="rounded-full border-2 p-1 border-primary transition-all w-[80%]"
                         src={member.image ? urlForImage(member.image).width(360).height(360).url() : 'https://picsum.photos/360/360'}
                         width={600}
                         height={600}
