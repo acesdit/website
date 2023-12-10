@@ -52,7 +52,7 @@ export const getMembers = async (slug) => {
     clubPosts,
     image
   }`, {next: {
-    revalidate: 0
+    revalidate: 3600
   }})
 }
 
@@ -65,7 +65,7 @@ export const getMember = async (slug) => {
       socials,
       image
     }`, { slug, next: {
-      revalidate: 0
-        } }
+      revalidate: 3600
+    } }
   )
 }
