@@ -6,7 +6,8 @@ const getFont = async () => {
     // const myUrl= new URL('../../../public/Oswald-Semibold.ttf', import.meta.url)
     // console.log(myUrl.href)
     const response = await fetch(
-        new URL('../../../public/Oswald-Semibold.ttf', import.meta.url)
+        // new URL('../../../public/Oswald-Semibold.ttf', import.meta.url)
+        new URL('/Oswald-Semibold.ttf', import.meta.url)
     );
     // const response = await fetch(`${protocol}//${host}/Oswald-SemiBold.ttf`)
     // const response = await fetch(`http://localhost:3000/Oswald-SemiBold.ttf`)
