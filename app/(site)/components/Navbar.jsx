@@ -7,11 +7,11 @@ import NavOpenSvg from './NavOpenSvg'
 import LogoText from './LogoText'
 function Navbar() {
   const routes = [
-    { label: 'Home', route: '/' },
-    { label: 'Blog', route: '/blog' },
-    { label: 'Events', route: '/construction' },
-    { label: 'Members', route: '/members' },
-    { label: 'Contact', route: '/construction' },
+    { label: 'Home', route: '/', external: false },
+    { label: 'Blog', route: '/blog', external: false },
+    { label: 'Events', route: '/construction', external: true },
+    { label: 'Members', route: '/members', external: false },
+    { label: 'Contact', route: 'mailto:acesdyp1@gmail.com', external: true },
   ]
 
   const [isOpen, setIsOpen] = useState(false)
@@ -54,7 +54,7 @@ function Navbar() {
         <ul className="hidden md:flex gap-8 text-base font-semibold uppercase">
           {routes.map((route) => (
             <li key={route.label}>
-              <Link className='nav-link' href={route.route}>{route.label}</Link>
+              <Link className='nav-link' href={route.route} target={route.external ? '_blank' : '_self'}>{route.label}</Link>
             </li>
           ))}
         </ul>
@@ -90,7 +90,7 @@ function Navbar() {
               key={route.label}
               className="p-4 mt-8 uppercase text-base font-semibold"
             >
-              <Link href={route.route}>{route.label}</Link>
+              <Link href={route.route} target={route.external ? '_blank' : '_self'}>{route.label}</Link>
             </li>
           ))}
         </ul>
