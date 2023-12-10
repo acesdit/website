@@ -8,6 +8,8 @@ import { urlForImage } from '@/sanity/lib/image'
 import { getImageDimensions } from '@sanity/asset-utils'
 import Link from 'next/link'
 import BreadCrumb from '../../components/BreadCrumb'
+import {post} from "@/sanity/schemas/post";
+
 
 const SampleImageComponent = ({ value }) => {
   const { width, height } = getImageDimensions(value)
@@ -27,9 +29,32 @@ const SampleImageComponent = ({ value }) => {
   )
 }
 
+export async function generateMetadata({ params }) {
+  const postData = await getPost(params.slug)
+  return {
+    title: postData.title,
+    description: postData.summary,
+    openGraph: {
+      title: postData.title,
+      description: postData.summary,
+      url: 'https://aces.dypvp.edu.in/',
+      siteName: 'ACES DIT',
+      images: [
+        {
+          url: `https://acesdit-alpha.vercel.app/og?title=${postData.title}`,
+          width: 1200,
+          height: 750,
+          alt: postData.title,
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+  }
+}
+
 async function BlogPost({ params }) {
   const slug = params.slug
-
   const post = await getPost(slug)
   let authorString = "";
   const numAuthors = post.authors.length
@@ -44,7 +69,6 @@ async function BlogPost({ params }) {
   return (
     <>
       <BreadCrumb parent="Blog" parentLink="/blog" child={post.title}/>
-
       <div className="container mx-auto p-4 md:px-6 pt-20">
         <h1 className="font-title font-medium uppercase text-5xl pb-4">
           {post.title}
@@ -58,7 +82,6 @@ async function BlogPost({ params }) {
           <p>{authorString}</p>
         </div>
       </div>
-
       <div className="container mx-auto p-4 md:px-6 flex flex-col md:flex-row gap-6 pb-20">
         <div className="md:w-3/4 flex flex-col gap-6">
           <Image

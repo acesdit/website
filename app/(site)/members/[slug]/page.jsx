@@ -7,7 +7,6 @@ import {urlForImage} from "@/sanity/lib/image";
 
 async function Member({params}) {
     const member = await getMember(params.slug)
-    console.log(member.clubPosts)
 
     if (!member) {
         return <h1>Member not found</h1>
@@ -46,7 +45,7 @@ async function Member({params}) {
                             {post.position}
                         </div>))}
                     </div>
-                    <div
+                    {member.socials && <div
                         className='text-2xl flex gap-5 [&>*]:text-primary [&>*]:p-2 [&>*]:border-2 [&>*]:border-primary [&>*]:rounded-full [&>*:hover]:text-white [&>*:hover]:bg-primary [&>*]:transition-colors'>
                         {member.socials.linkedIn && <Link target='_blank' href={member.socials.linkedIn}>
                             <FaLinkedinIn/>
@@ -60,8 +59,7 @@ async function Member({params}) {
                         {member.socials.instagram && <Link target='_blank' href={member.socials.instagram}>
                             <FaInstagram/>
                         </Link>}
-
-                    </div>
+                    </div>}
                 </div>
             </div>
         </>
