@@ -1,9 +1,15 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from 'next/image'
+import Link from 'next/link'
 
-function Author({name, slug, imageUrl}) {
+function Author({ name, slug, imageUrl }) {
   return (
-    <Link href={'/'} className="flex items-center gap-2 text-primary"><Image className="rounded-full" src={imageUrl} height={50} width={50}/>{name}</Link>
+    <Link
+      href={`/members/${slug}`}
+      className="flex items-center gap-2 text-primary"
+    >
+      <Image className="rounded-full" src={imageUrl} height={50} width={50} />
+      {name}
+    </Link>
   )
 }
 

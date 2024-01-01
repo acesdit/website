@@ -8,8 +8,7 @@ import { urlForImage } from '@/sanity/lib/image'
 import { getImageDimensions } from '@sanity/asset-utils'
 import Link from 'next/link'
 import BreadCrumb from '../../components/BreadCrumb'
-import {post} from "@/sanity/schemas/post";
-
+import { post } from '@/sanity/schemas/post'
 
 const SampleImageComponent = ({ value }) => {
   const { width, height } = getImageDimensions(value)
@@ -24,7 +23,7 @@ const SampleImageComponent = ({ value }) => {
           aspectRatio: width / height,
         }}
       />
-      <figcaption className='text-center italic'>{value.alt}</figcaption>
+      <figcaption className="text-center italic">{value.alt}</figcaption>
     </figure>
   )
 }
@@ -56,24 +55,22 @@ export async function generateMetadata({ params }) {
 async function BlogPost({ params }) {
   const slug = params.slug
   const post = await getPost(slug)
-  let authorString = "";
+  let authorString = ''
   const numAuthors = post.authors.length
   post.authors.forEach((author, index) => {
     authorString += author.name
-    if (index < numAuthors-2)
-      authorString += ", "
-    if (index === numAuthors-2)
-      authorString += " & "
+    if (index < numAuthors - 2) authorString += ', '
+    if (index === numAuthors - 2) authorString += ' & '
   })
 
   return (
     <>
-      <BreadCrumb parent="Blog" parentLink="/blog" child={post.title}/>
+      <BreadCrumb parent="Blog" parentLink="/blog" child={post.title} />
       <div className="container mx-auto p-4 md:px-6 pt-20">
         <h1 className="font-title font-medium uppercase text-5xl pb-4">
           {post.title}
         </h1>
-        <div className='flex flex-col md:flex-row gap-4'>
+        <div className="flex flex-col md:flex-row gap-4">
           <time dateTime={post.publishedAt}>
             {DateTime.fromISO(post.publishedAt).toLocaleString(
               DateTime.DATE_MED
@@ -86,7 +83,11 @@ async function BlogPost({ params }) {
         <div className="md:w-3/4 flex flex-col gap-6">
           <Image
             className="w-full rounded-xl"
-            src={urlForImage(post.mainImage).width(737).fit('max').auto('format').url()}
+            src={urlForImage(post.mainImage)
+              .width(737)
+              .fit('max')
+              .auto('format')
+              .url()}
             width={737}
             height={491}
             alt="A rocket"
@@ -116,16 +117,23 @@ async function BlogPost({ params }) {
             </h5>
             <hr className="border-2 border-black mb-4" />
             <div className="flex gap-6 flex-wrap">
-              {post.authors.map(author => (
-                  <Author key={author.slug} name={author.name} slug={author.slug} imageUrl={urlForImage(author.image).width(50).height(50).url()}/>
+              {post.authors.map((author) => (
+                <Author
+                  key={author.slug}
+                  name={author.name}
+                  slug={author.slug}
+                  imageUrl={urlForImage(author.image)
+                    .width(50)
+                    .height(50)
+                    .url()}
+                />
               ))}
             </div>
           </div>
         </div>
         <div className="md:w-1/4">
-          <div className='sticky top-[80px]'>
-          <NewsletterCallout />
-
+          <div className="sticky top-[80px]">
+            <NewsletterCallout />
           </div>
         </div>
       </div>
