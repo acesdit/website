@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import teamImg from '../../../public/images/team.png'
+import newImg from '../../../public/images/newteam.jpeg'
 
 function WhoAreWeSection() {
   return (
@@ -14,9 +15,17 @@ function WhoAreWeSection() {
           </p>
         </div>
         <div className="md:w-1/2 rounded-xl md:rounded-r-none md:rounded-l-xl overflow-hidden">
-          <Image
+          {/* <Image
             className="w-full"
             src={teamImg}
+            width={640}
+            height={340}
+            alt='Team Photo'
+            placeholder='blur'
+          /> */}
+          <Image
+            className="w-full"
+            src={newImg}
             width={640}
             height={340}
             alt='Team Photo'
