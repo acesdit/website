@@ -9,20 +9,10 @@ function WhoAreWeSection() {
         <div className="md:w-1/2 flex flex-col justify-center pr-4 pb-6 lg:pr-40">
           <h2 className="main-head">Who are we</h2>
           <p className="text-lg">
-            Association of Computer Engineering Students is the departmental
-            club of Department of Computer Engineering at Dr. D. Y. Patil
-            Institute of Technology, Pimpri
+          The Association of Computer Engineering Students is a vibrant departmental club of Department of Computer Engineering at Dr. D. Y. Patil Institute of Technology, Pimpri. Comprising passionate students, faculty mentors, and industry enthusiasts, ACES serves as a dynamic hub for fostering collaboration & innovation  within the realm of computer engineering.
           </p>
         </div>
         <div className="md:w-1/2 rounded-xl md:rounded-r-none md:rounded-l-xl overflow-hidden">
-          {/* <Image
-            className="w-full"
-            src={teamImg}
-            width={640}
-            height={340}
-            alt='Team Photo'
-            placeholder='blur'
-          /> */}
           <Image
             className="w-full"
             src={newImg}
