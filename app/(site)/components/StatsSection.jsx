@@ -24,19 +24,19 @@ function StatsSection() {
       </div>
       <div className="container mx-auto px-16 flex flex-col md:flex-row text-center border-t-4 border-black">
         <div className="md:w-1/3 py-12">
-          <h3 className="font-title font-medium text-7xl pb-2">
+          <h3 className="font-title font-medium text-6xl pb-2">
             <IncrementNumber number={108} />
           </h3>
           <p>Events organized</p>
         </div>
         <div className="md:w-1/3 py-12">
-          <h3 className="font-title font-medium text-7xl pb-2">
+          <h3 className="font-title font-medium text-6xl pb-2">
             <IncrementNumber number={23009} />
           </h3>
           <p>Participants</p>
         </div>
         <div className="md:w-1/3 py-12">
-          <h3 className="font-title font-medium text-7xl pb-2">
+          <h3 className="font-title font-medium text-6xl pb-2">
             <IncrementNumber number={2400} />
           </h3>
           <p>Members</p>
