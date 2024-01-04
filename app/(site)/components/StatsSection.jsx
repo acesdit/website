@@ -33,13 +33,13 @@ function StatsSection() {
         </div>
         <div className="md:w-1/3 py-12">
           <h3 className="font-title font-medium text-7xl pb-2">
-            <IncrementNumber number={24000} />
+            <IncrementNumber number={23009} />
           </h3>
           <p>Participants</p>
         </div>
         <div className="md:w-1/3 py-12">
           <h3 className="font-title font-medium text-7xl pb-2">
-            <IncrementNumber number={470} />
+            <IncrementNumber number={2400} />
           </h3>
           <p>Members</p>
         </div>
