@@ -49,7 +49,7 @@ function ConstructionModal() {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="py-2">
-                      This site is still in development & some features may not work as expected.
+                      This part of site is still in development & some features may not work as expected.
                     </p>
                   </div>
 
