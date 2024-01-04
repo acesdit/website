@@ -29,13 +29,15 @@ export const getPost = async (slug) => {
       title,
       publishedAt,
       'authors': authors[]{
-        _type == 'Club Members' => @->{name, slug, image},
+        _type == 'Club Members' => @->{name, "slug": slug.current, image},
       },
       "slug": slug.current,
       summary,
       body,
       mainImage,
-    }`, { slug }
+    }`, { slug, next: {
+      revalidate: 0
+    } }
   )
 }
 

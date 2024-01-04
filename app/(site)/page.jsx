@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Hero from './components/Hero';
 import BlogCard from './components/BlogCard';
 import EventsSection from './components/EventsSection';
+import SponsorsSection from './components/SponsorSection';
 import WhoAreWeSection from './components/WhoAreWeSection';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <Hero />
       <WhoAreWeSection/>
       <StatsSection/>
-      <EventsSection/>
+      <SponsorsSection/>
     </>
   )
 }
