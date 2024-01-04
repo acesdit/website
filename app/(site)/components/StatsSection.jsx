@@ -18,9 +18,7 @@ function StatsSection() {
         <div className="md:w-1/2 py-12 md:pr-44 flex flex-col justify-center">
           <h2 className="main-head">Sparking innovation among students</h2>
           <p className="text-lg">
-            Association of Computer Engineering Students is the departmental
-            club of Department of Computer Engineering at Dr. D. Y. Patil
-            Institute of Technology, Pimpri
+            Since 2023, ACES has played an important role in creating an engaging community for sharing knowledge & passion for all facets of computer engineering.
           </p>
         </div>
       </div>
