@@ -118,29 +118,41 @@ svg.with-text {
 }
 
 .blog-post-content * {
-  @apply my-2;
+  @apply my-2 leading-6;
 }
 
 .blog-post-content p {
-  @apply mb-6;
+  @apply mb-6 text-lg;
 }
 
 .blog-post-content h1 {
-  @apply text-primary text-3xl font-semibold;
+  @apply text-primary text-4xl font-semibold pt-3 pb-2;
 }
 
 .blog-post-content h2 {
-  @apply text-primary text-2xl font-semibold;
+  @apply text-primary text-3xl font-semibold pt-3 pb-2;
 }
 
 .blog-post-content h3 {
-  @apply text-primary text-xl font-semibold;
+  @apply text-primary text-2xl font-semibold pt-3 pb-2;
 }
 
 .blog-post-content h4 {
-  @apply text-primary text-lg font-semibold;
+  @apply text-primary text-xl font-semibold pt-3 pb-2;
 }
 
 .blog-post-content figure {
   @apply my-8 drop-shadow;
+}
+
+.blog-post-content ul {
+  @apply list-disc pl-6 pb-1 text-lg;
+}
+
+.blog-post-content ol {
+  @apply list-decimal pl-6 pb-1 text-lg;
+}
+
+.blog-post-content a {
+  @apply text-primary underline text-lg;
 }

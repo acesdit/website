@@ -21,7 +21,6 @@ function Navbar() {
     const nav = document.querySelector('nav')
     const header = document.querySelector('.nav-target')
     const navHeight = nav.getBoundingClientRect().height
-    console.log('RAAAN')
     function updateNavColor(entries) {
       const [entry] = entries
       if (!entry.isIntersecting) {

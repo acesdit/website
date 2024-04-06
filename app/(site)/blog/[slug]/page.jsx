@@ -91,6 +91,7 @@ async function BlogPost({ params }) {
             width={737}
             height={491}
             alt="A rocket"
+            priority
           />
           <div className="bg-[#ebebeb] p-6 rounded-xl">
             <h3 className="font-title uppercase font-medium text-lg text-primary pb-1">
@@ -116,18 +117,21 @@ async function BlogPost({ params }) {
               Authors
             </h5>
             <hr className="border-2 border-black mb-4" />
-            <div className="flex gap-6 flex-wrap">
-              {post.authors.map((author) => (
-                <Author
-                  key={author.slug}
-                  name={author.name}
-                  slug={author.slug}
-                  imageUrl={urlForImage(author.image)
-                    .width(50)
-                    .height(50)
-                    .url()}
-                />
-              ))}
+            <div className="flex gap-6 flex-wrap items-center">
+              {post.authors.map((author) => {
+                return (
+                  <Author
+                    key={author.name}
+                    name={author.name}
+                    slug={author.slug}
+                    imageUrl={
+                      author.slug
+                        ? urlForImage(author.image).width(50).height(50).url()
+                        : null
+                    }
+                  />
+                )
+              })}
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ const client = createClient({
 
 export const getPosts = async () => {
   return client.fetch(
-    groq`*[_type == "post"] {
+    groq`*[_type == "post"] | order(publishedAt desc) {
       _id,
       title,
       publishedAt,
@@ -30,6 +30,7 @@ export const getPost = async (slug) => {
       publishedAt,
       'authors': authors[]{
         _type == 'Club Members' => @->{name, "slug": slug.current, image},
+        _type == 'Volunteer' => {"name": volunteerName},
       },
       "slug": slug.current,
       summary,

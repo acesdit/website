@@ -21,7 +21,16 @@ export const post = {
       name: 'authors',
       title: 'Authors',
       type: 'array',
-      of: [{ name: 'Club Members', type: 'reference', to: { type: 'member' } }, { name: 'Volunteer', type: 'object', fields: [{ name: 'volunteerName', title: 'Volunteer Name', type: 'string' }] }]
+      of: [
+        { name: 'Club Members', type: 'reference', to: { type: 'member' } },
+        {
+          name: 'Volunteer',
+          type: 'object',
+          fields: [
+            { name: 'volunteerName', title: 'Volunteer Name', type: 'string' },
+          ],
+        },
+      ],
     },
     {
       name: 'mainImage',
@@ -35,8 +44,8 @@ export const post = {
           name: 'alt',
           type: 'string',
           title: 'Alternative Text',
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'publishedAt',
@@ -48,7 +57,10 @@ export const post = {
       type: 'text',
       title: 'Post Summary',
       rows: 3,
-      validation: Rule => Rule.required().max(400).error("Only 400 characters are allowed at max")
+      validation: (Rule) =>
+        Rule.required()
+          .max(400)
+          .error('Only 400 characters are allowed at max'),
     },
     {
       name: 'body',
