@@ -24,8 +24,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/aces-vector.svg" />
+      </head>
       <body className={`${inter.variable} ${oswald.variable} font-body`}>
-        <NextTopLoader color='#A07C38' showSpinner={false}/>
+        <NextTopLoader color="#A07C38" showSpinner={false} />
         <Navbar />
         {children}
         <Footer />
