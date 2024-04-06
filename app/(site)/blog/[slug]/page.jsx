@@ -40,7 +40,7 @@ export async function generateMetadata({ params }) {
       siteName: 'ACES DIT',
       images: [
         {
-          url: `https://acesdit-alpha.vercel.app/og?title=${postData.title}`,
+          url: `https://acesdit.vercel.app/og?title=${postData.title}`,
           width: 1200,
           height: 750,
           alt: postData.title,
