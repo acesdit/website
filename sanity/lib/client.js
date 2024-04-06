@@ -11,14 +11,18 @@ const client = createClient({
 
 export const getPosts = async () => {
   return client.fetch(
-    groq`*[_type == "post"] {
+    groq`*[_type == "post"] | order(publishedAt desc) {
       _id,
       title,
       publishedAt,
       "slug": slug.current,
       summary,
       mainImage
-    }`
+    }`, {
+      next: {
+        revalidate: 600
+      }
+    }
   )
 }
 
@@ -30,22 +34,17 @@ export const getPost = async (slug) => {
       publishedAt,
       'authors': authors[]{
         _type == 'Club Members' => @->{name, "slug": slug.current, image},
+        _type == 'Volunteer' => {"name": volunteerName},
       },
       "slug": slug.current,
       summary,
       body,
       mainImage,
     }`, { slug, next: {
-      revalidate: 0
+      revalidate: 600
     } }
   )
 }
-
-// export const createMember = async (doc) => {
-//   client.create(doc).then((res) => {
-//     console.log(`Member created with document ID ${res._id}`)
-//   })
-// }
 
 export const getMembers = async (slug) => {
   return client.fetch(groq`*[_type == "member"]{
@@ -54,7 +53,7 @@ export const getMembers = async (slug) => {
     clubPosts,
     image
   }`, {next: {
-    revalidate: 0
+    revalidate: 600
   }})
 }
 
@@ -67,7 +66,7 @@ export const getMember = async (slug) => {
       socials,
       image
     }`, { slug, next: {
-      revalidate: 0
+      revalidate: 600
     } }
   )
 }

@@ -20,7 +20,7 @@ export const BlogCard = ({
           <p className="font-title font-light text-lg leading-snug py-2">
             {description}
           </p>
-        <time dateTime={creationDate} className="font-light text-lg">{DateTime.fromISO(creationDate).toLocaleString(DateTime.DATE_MED)}</time>
+        <time dateTime={creationDate} className="font-semibold text-primary text-base">{DateTime.fromISO(creationDate).toLocaleString(DateTime.DATE_MED)}</time>
       </div>
     </article>
     </Link>
