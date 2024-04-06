@@ -14,8 +14,8 @@ function App() {
     <>
       <Hero />
       <WhoAreWeSection/>
-      <SponsorsSection/>
       <StatsSection/>
+      <SponsorsSection/>
     </>
   )
 }

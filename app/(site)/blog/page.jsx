@@ -1,9 +1,6 @@
 import BlogCard from '../components/BlogCard'
 import FeaturedCard from '../components/FeaturedCard'
 import NewsletterCallout from '../components/NewsletterCallout'
-import ConstructionModal from '../components/ConstructionModal'
-
-import Image from 'next/image'
 
 import { getPosts } from '@/sanity/lib/client'
 import { urlForImage } from '@/sanity/lib/image'
@@ -17,8 +14,6 @@ async function Page() {
   return (
     <>
       <Header title="Blog"/>
-
-      <ConstructionModal/>
 
       <section className="container mx-auto p-4 md:px-6 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-7 pt-20">
         <FeaturedCard
