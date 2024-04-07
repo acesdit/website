@@ -20,7 +20,7 @@ export const getPosts = async () => {
       mainImage
     }`, {
       next: {
-        revalidate: 600
+        revalidate: 0
       }
     }
   )
