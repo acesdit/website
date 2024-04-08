@@ -154,5 +154,5 @@ svg.with-text {
 }
 
 .blog-post-content a {
-  @apply text-primary underline text-lg;
+  @apply text-primary underline text-lg break-all;
 }
