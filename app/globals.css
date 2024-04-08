@@ -18,8 +18,9 @@
 }
 
 .hero-container {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url(/images/hero.jpg);
-  background-color: #7D111C;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)),
+    url(/images/hero.jpg);
+  background-color: #7d111c;
 }
 
 .first-element {
@@ -28,7 +29,7 @@
 
 nav.nav-middle {
   backdrop-filter: blur(20px);
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   @apply text-black;
 }
 
@@ -61,7 +62,7 @@ svg.with-text {
     --container-width: 768px;
   }
   .bleed-container {
-    margin-left: calc((100vw - var(--container-width))/2)
+    margin-left: calc((100vw - var(--container-width)) / 2);
   }
 }
 
