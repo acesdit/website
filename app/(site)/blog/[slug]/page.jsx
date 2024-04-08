@@ -117,7 +117,7 @@ async function BlogPost({ params }) {
               Authors
             </h5>
             <hr className='border-2 border-black mb-4' />
-            <div className='flex gap-6 flex-wrap items-center'>
+            <div className='flex gap-3 flex-wrap items-center'>
               {post.authors.map((author) => {
                 return (
                   <Author
