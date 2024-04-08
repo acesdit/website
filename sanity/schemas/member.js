@@ -106,7 +106,7 @@ export const member = {
       name: 'socials',
       description: 'Enter URLs to your following profiles',
       fieldsets: [
-        {name: 'social', title: 'Social media handles'}
+        { name: 'social', title: 'Social media handles' }
       ],
       fields: [
         {

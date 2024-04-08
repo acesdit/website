@@ -19,10 +19,10 @@ export const getPosts = async () => {
       summary,
       mainImage
     }`, {
-      next: {
-        revalidate: 0
-      }
+    next: {
+      revalidate: 0
     }
+  }
   )
 }
 
@@ -40,9 +40,11 @@ export const getPost = async (slug) => {
       summary,
       body,
       mainImage,
-    }`, { slug, next: {
+    }`, {
+    slug, next: {
       revalidate: 600
-    } }
+    }
+  }
   )
 }
 
@@ -52,21 +54,25 @@ export const getMembers = async (slug) => {
     "slug": slug.current,
     clubPosts,
     image
-  }`, {next: {
-    revalidate: 600
-  }})
+  }`, {
+    next: {
+      revalidate: 600
+    }
+  })
 }
 
 export const getMember = async (slug) => {
   return client.fetch(
-      groq`*[_type == "member" && slug.current == $slug][0] {
+    groq`*[_type == "member" && slug.current == $slug][0] {
       name,
       bio,
       clubPosts,
       socials,
       image
-    }`, { slug, next: {
+    }`, {
+    slug, next: {
       revalidate: 600
-    } }
+    }
+  }
   )
 }

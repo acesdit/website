@@ -10,19 +10,22 @@ const MemberCard = ({ member }) => {
       href={`/members/${member.slug}`}
       className={`flex group flex-col items-center border-[1px] border-solid border-black px-4 py-8 rounded-xl  relative transition-all hover:-translate-y-1 text-center  hover:shadow-xl ${
         member.clubPosts[0].category === 'faculty' ? 'bg-beige' : 'bg-white'
-      }`}
-    >
+      }`}>
       <Image
-        className="rounded-full border-[2px] p-1 border-primary transition-all group-hover:border-[5px]"
-        src={`${member.image ? urlForImage(member.image).width(400).height(400).url() : `https://picsum.photos/200/200`}`}
+        className='rounded-full border-[2px] p-1 border-primary transition-all group-hover:border-[5px]'
+        src={`${
+          member.image
+            ? urlForImage(member.image).width(400).height(400).url()
+            : `https://picsum.photos/200/200`
+        }`}
         width={160}
         height={160}
         alt={member.name}
       />
-      <h3 className="font-title uppercase text-primary font-medium text-xl pt-4">
+      <h3 className='font-title uppercase text-primary font-medium text-xl pt-4'>
         {member.name}
       </h3>
-      <p className="pt-1">{member.clubPosts[0].position}</p>
+      <p className='pt-1'>{member.clubPosts[0].position}</p>
     </Link>
   )
 }
@@ -69,7 +72,7 @@ async function Members() {
     'Jr. External Affairs Officer',
     'Jr. Public Relations Officer',
     'Jr. Technical Head',
-    'Faculty Coordinator'
+    'Faculty Coordinator',
   ]
 
   // Sort the keys based on the custom order
@@ -89,23 +92,23 @@ async function Members() {
 
   return (
     <>
-      <Header title="Meet the team" />
-      <section className="container mx-auto p-4 md:px-6 pb-8 flex flex-col lg:flex-row md:gap-7">
-        <div className="lg:w-4/5 h-fit">
-          <h2 className="font-title uppercase text-primary font-semibold text-3xl py-6">
+      <Header title='Meet the team' />
+      <section className='container mx-auto p-4 md:px-6 pb-8 flex flex-col lg:flex-row md:gap-7'>
+        <div className='lg:w-4/5 h-fit'>
+          <h2 className='font-title uppercase text-primary font-semibold text-3xl py-6'>
             {sequence[0].displayName}
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-7">
+          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-7'>
             {groupedData[sequence[0].category].map((member) => (
               <MemberCard key={member.name} member={member} />
             ))}
           </div>
         </div>
-        <div className="lg:w-1/5 md:pr-5">
-          <h2 className="font-title uppercase text-primary font-semibold text-3xl py-6">
+        <div className='lg:w-1/5 md:pr-5'>
+          <h2 className='font-title uppercase text-primary font-semibold text-3xl py-6'>
             Faculties
           </h2>
-          <div className="grid grid-cols-2 lg:grid-cols-1 gap-5 md:gap-7">
+          <div className='grid grid-cols-2 lg:grid-cols-1 gap-5 md:gap-7'>
             {groupedData['faculty'].map((member) => (
               <MemberCard key={member.name} member={member} />
             ))}
@@ -115,15 +118,14 @@ async function Members() {
       {sequence.slice(1).map((seq) => (
         <section
           key={seq.category}
-          className="container mx-auto p-4 md:px-6 pb-20 flex flex-col lg:flex-row md:gap-7"
-        >
+          className='container mx-auto p-4 md:px-6 pb-20 flex flex-col lg:flex-row md:gap-7'>
           {/* <div className="w-4/5 h-fit"> */}
-          <div className="w-full h-fit">
-            <h2 className="font-title uppercase text-primary font-semibold text-3xl py-6">
+          <div className='w-full h-fit'>
+            <h2 className='font-title uppercase text-primary font-semibold text-3xl py-6'>
               {seq.displayName}
             </h2>
             {/* <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-7"> */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-7">
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-7'>
               {groupedData[seq.category].map((member) => (
                 <MemberCard key={member.name} member={member} />
               ))}

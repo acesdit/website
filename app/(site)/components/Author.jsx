@@ -6,11 +6,10 @@ function Author({ name, slug, imageUrl }) {
     return (
       <Link
         href={`/members/${slug}`}
-        className="flex items-center gap-2 text-primary border-[1px] border-black py-2 px-3 h-full rounded-full"
-      >
+        className='flex items-center gap-2 text-primary border-[1px] border-black py-2 px-3 h-full rounded-full'>
         {imageUrl && (
           <Image
-            className="rounded-full"
+            className='rounded-full'
             src={imageUrl}
             height={32}
             width={32}
@@ -20,7 +19,11 @@ function Author({ name, slug, imageUrl }) {
       </Link>
     )
   } else {
-    return <span className="flex items-center gap-2 text-primary border-[1px] border-black py-2 px-3 h-full rounded-full">{name}</span>
+    return (
+      <span className='flex items-center gap-2 text-primary border-[1px] border-black py-2 px-3 h-full rounded-full'>
+        {name}
+      </span>
+    )
   }
 }
 
