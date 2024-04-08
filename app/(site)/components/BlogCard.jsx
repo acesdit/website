@@ -10,7 +10,7 @@ export const BlogCard = ({
   linkTo,
 }) => {
   return (
-    <Link className='block box-border' href={linkTo}>
+    <Link className='block box-border transition-all hover:-translate-y-1 hover:shadow-xl' href={linkTo}>
     <article className="border-[1px] border-solid border-black overflow-hidden rounded-2xl h-full box-border">
       <Image alt='To be changed' className="w-full" src={imageURL} height={300} width={422} />
       <div className="p-5 box-border">
