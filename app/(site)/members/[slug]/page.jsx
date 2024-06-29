@@ -14,7 +14,11 @@ async function Member({ params }) {
   const member = await getMember(params.slug)
 
   if (!member) {
-    return <h1>Member not found</h1>
+    return (
+      <h1 className='text-primary font-title uppercase text-center py-72 text-4xl md:text-7xl font-semibold px-4 mx-auto'>
+        Member not found
+      </h1>
+    )
   }
 
   return (

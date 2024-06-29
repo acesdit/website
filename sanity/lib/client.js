@@ -71,7 +71,7 @@ export const getMember = async (slug) => {
       image
     }`, {
     slug, next: {
-      revalidate: 600
+      revalidate: 0
     }
   }
   )
