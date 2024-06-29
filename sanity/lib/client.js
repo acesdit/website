@@ -49,7 +49,7 @@ export const getPost = async (slug) => {
 }
 
 export const getMembers = async (slug) => {
-  return client.fetch(groq`*[_type == "member"]{
+  return client.fetch(groq`*[_type == "member" && (clubPosts[0].tenure == "2023" || clubPosts[1].tenure == "2023" || clubPosts[2].tenure == "2023")]{
     name,
     "slug": slug.current,
     clubPosts,
