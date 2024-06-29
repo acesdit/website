@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import '../globals.css'
 import { Inter, Oswald } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -40,16 +41,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
-        <link rel="icon" href="/aces-vector.svg" />
+        <link rel='icon' href='/aces-vector.svg' />
       </head>
       <body className={`${inter.variable} ${oswald.variable} font-body`}>
-        <NextTopLoader color="#A07C38" showSpinner={false} />
+        <NextTopLoader color='#A07C38' showSpinner={false} />
         <Navbar />
         {children}
         <Footer />
       </body>
+      <GoogleAnalytics gaId='G-T3XPVBH764' />
     </html>
   )
 }

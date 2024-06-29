@@ -1,4 +1,4 @@
-import {ImageResponse} from "next/server";
+import { ImageResponse } from "next/server";
 
 export const runtime = 'edge'
 
@@ -35,7 +35,7 @@ export async function GET(request) {
                     padding: '80px'
                 }}
             >
-                <h1 style={{margin: 0, padding: 0, lineHeight: 1}}>{title}</h1>
+                <h1 style={{ margin: 0, padding: 0, lineHeight: 1 }}>{title}</h1>
             </div>
         ),
         {

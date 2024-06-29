@@ -13,17 +13,17 @@ import { post } from '@/sanity/schemas/post'
 const SampleImageComponent = ({ value }) => {
   const { width, height } = getImageDimensions(value)
   return (
-    <figure className="w-fit mt-12 mb-12 mx-auto">
+    <figure className='w-fit mt-12 mb-12 mx-auto'>
       <img
-        className="rounded-xl"
+        className='rounded-xl'
         src={urlForImage(value).width(700).fit('max').auto('format').url()}
         alt={value.alt || ' '}
-        loading="lazy"
+        loading='lazy'
         style={{
           aspectRatio: width / height,
         }}
       />
-      <figcaption className="text-center italic">{value.alt}</figcaption>
+      <figcaption className='text-center italic'>{value.alt}</figcaption>
     </figure>
   )
 }
@@ -65,24 +65,24 @@ async function BlogPost({ params }) {
 
   return (
     <>
-      <BreadCrumb parent="Blog" parentLink="/blog" child={post.title} />
-      <div className="container mx-auto p-4 md:px-6 pt-20">
-        <h1 className="font-title font-medium uppercase text-5xl pb-4">
+      <BreadCrumb parent='Blog' parentLink='/blog' child={post.title} />
+      <div className='container mx-auto p-4 md:px-6 pt-20'>
+        <h1 className='font-title font-medium uppercase text-5xl pb-4'>
           {post.title}
         </h1>
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className='flex flex-col md:flex-row gap-4'>
           <time dateTime={post.publishedAt}>
             {DateTime.fromISO(post.publishedAt).toLocaleString(
-              DateTime.DATE_MED
+              DateTime.DATE_MED,
             )}
           </time>
           <p>{authorString}</p>
         </div>
       </div>
-      <div className="container mx-auto p-4 md:px-6 flex flex-col md:flex-row gap-6 pb-20">
-        <div className="md:w-3/4 flex flex-col gap-6">
+      <div className='container mx-auto p-4 md:px-6 flex flex-col md:flex-row gap-6 pb-20'>
+        <div className='md:w-3/4 flex flex-col gap-6'>
           <Image
-            className="w-full rounded-xl"
+            className='w-full rounded-xl'
             src={urlForImage(post.mainImage)
               .width(737)
               .fit('max')
@@ -90,18 +90,18 @@ async function BlogPost({ params }) {
               .url()}
             width={737}
             height={491}
-            alt="A rocket"
+            alt='A rocket'
             priority
           />
-          <div className="bg-[#ebebeb] p-6 rounded-xl">
-            <h3 className="font-title uppercase font-medium text-lg text-primary pb-1">
+          <div className='bg-[#ebebeb] p-6 rounded-xl'>
+            <h3 className='font-title uppercase font-medium text-lg text-primary pb-1'>
               TL;DR;
             </h3>
-            <p className="italic">{post.summary}</p>
+            <p className='italic'>{post.summary}</p>
           </div>
 
           {/* Block Content */}
-          <div className="blog-post-content">
+          <div className='blog-post-content'>
             <PortableText
               value={post.body}
               components={{
@@ -113,11 +113,11 @@ async function BlogPost({ params }) {
           </div>
 
           <div>
-            <h5 className="font-title uppercase leading-none text-lg font-semibold pb-4">
+            <h5 className='font-title uppercase leading-none text-lg font-semibold pb-4'>
               Authors
             </h5>
-            <hr className="border-2 border-black mb-4" />
-            <div className="flex gap-6 flex-wrap items-center">
+            <hr className='border-2 border-black mb-4' />
+            <div className='flex gap-3 flex-wrap items-center'>
               {post.authors.map((author) => {
                 return (
                   <Author
@@ -135,8 +135,8 @@ async function BlogPost({ params }) {
             </div>
           </div>
         </div>
-        <div className="md:w-1/4">
-          <div className="sticky top-[80px]">
+        <div className='md:w-1/4'>
+          <div className='sticky top-[80px]'>
             <NewsletterCallout />
           </div>
         </div>

@@ -18,7 +18,11 @@ export const getPosts = async () => {
       "slug": slug.current,
       summary,
       mainImage
-    }`
+    }`, {
+    next: {
+      revalidate: 0
+    }
+  }
   )
 }
 
@@ -36,39 +40,39 @@ export const getPost = async (slug) => {
       summary,
       body,
       mainImage,
-    }`, { slug, next: {
-      revalidate: 0
-    } }
+    }`, {
+    slug, next: {
+      revalidate: 600
+    }
+  }
   )
 }
 
-// export const createMember = async (doc) => {
-//   client.create(doc).then((res) => {
-//     console.log(`Member created with document ID ${res._id}`)
-//   })
-// }
-
 export const getMembers = async (slug) => {
-  return client.fetch(groq`*[_type == "member"]{
+  return client.fetch(groq`*[_type == "member" && (clubPosts[0].tenure == "2023" || clubPosts[1].tenure == "2023" || clubPosts[2].tenure == "2023")]{
     name,
     "slug": slug.current,
     clubPosts,
     image
-  }`, {next: {
-    revalidate: 0
-  }})
+  }`, {
+    next: {
+      revalidate: 600
+    }
+  })
 }
 
 export const getMember = async (slug) => {
   return client.fetch(
-      groq`*[_type == "member" && slug.current == $slug][0] {
+    groq`*[_type == "member" && slug.current == $slug][0] {
       name,
       bio,
       clubPosts,
       socials,
       image
-    }`, { slug, next: {
+    }`, {
+    slug, next: {
       revalidate: 0
-    } }
+    }
+  }
   )
 }

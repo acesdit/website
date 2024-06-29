@@ -44,18 +44,17 @@ function EventCard({ name }) {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative snap-start hover-halo"
-      href="/"
-    >
+      className='relative snap-start hover-halo'
+      href='/'>
       <div
-        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
+        className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'
         style={{
           opacity,
           background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,.2), transparent 40%)`,
         }}
       />
-      <div className="w-96 h-60 bg-slate-900 text-white flex items-end p-5 rounded-lg">
-        <h3 className="uppercase font-title font-medium text-4xl leading-tight">
+      <div className='w-96 h-60 bg-slate-900 text-white flex items-end p-5 rounded-lg'>
+        <h3 className='uppercase font-title font-medium text-4xl leading-tight'>
           {name}
         </h3>
       </div>
