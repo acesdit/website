@@ -4,6 +4,11 @@ import Link from 'next/link'
 import { urlForImage } from '@/sanity/lib/image'
 import { getMembers } from '@/sanity/lib/client'
 
+// Page title
+export const metadata = {
+  title: 'Members | ACES DIT',
+}
+
 const MemberCard = ({ member }) => {
   return (
     <Link
