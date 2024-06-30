@@ -10,6 +10,14 @@ import {
 import { getMember } from '@/sanity/lib/client'
 import { urlForImage } from '@/sanity/lib/image'
 
+// For pages titles
+export async function generateMetadata({ params }) {
+  const memberData = await getMember(params.slug)
+  return {
+    title: `${memberData.name} | ACES DIT`,
+  }
+}
+
 async function Member({ params }) {
   const member = await getMember(params.slug)
 
