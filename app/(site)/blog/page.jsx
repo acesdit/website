@@ -6,6 +6,11 @@ import { getPosts } from '@/sanity/lib/client'
 import { urlForImage } from '@/sanity/lib/image'
 import Header from '../components/Header'
 
+// Page title
+export const metadata = {
+  title: 'Blog | ACES DIT',
+}
+
 async function Page() {
   const posts = await getPosts()
   const DESCRIPTION_LENGTH = 150
