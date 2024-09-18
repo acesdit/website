@@ -44,7 +44,7 @@ async function Members() {
   ]
   const groupedData = members.reduce((acc, member) => {
     const groupKey = member.clubPosts.filter((obj) => {
-      return obj.tenure === '2023'
+      return obj.tenure === '2024'
     })[0].category
     if (!acc[groupKey]) {
       acc[groupKey] = []
