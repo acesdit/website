@@ -3,6 +3,16 @@
 import Link from 'next/link'
 import { useRef, useState } from 'react'
 
+// NOT USED IN CURRENT SITE
+
+/**
+ * A component that renders a single event as a card.
+ * The component uses hover effects to create a "halo" around the card.
+ * @param {{ name: string }} props
+ * A props object with a `name` property.
+ * @returns {JSX.Element}
+ * A JSX element that renders the event card.
+ */
 function EventCard({ name }) {
   const divRef = useRef(null)
   const [isFocused, setIsFocused] = useState(false)

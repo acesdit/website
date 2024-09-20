@@ -1,6 +1,14 @@
 import Link from 'next/link'
 import EventCard from './EventCard'
 
+// NOT USED IN CURRENT SITE
+
+/**
+ * A Next.js page component that renders a list of events in a horizontal
+ * scrollable container. The events are rendered as `EventCard` components.
+ *
+ * @returns {JSX.Element} A JSX element that renders the list of events.
+ */
 function EventsSection() {
   const events = [
     'Acunetix 10.0',

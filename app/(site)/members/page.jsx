@@ -9,6 +9,13 @@ export const metadata = {
   title: 'Members | ACES DIT',
 }
 
+/**
+ * A component that renders a single member as a card.
+ * @param {{ name: string, slug: string, clubPosts: { position: string, category: 'faculty' | 'student' }[] }} member
+ * A member object with name, slug, and clubPosts properties.
+ * @returns {JSX.Element}
+ * A JSX element that renders a single member as a card.
+ */
 const MemberCard = ({ member }) => {
   return (
     <Link
@@ -35,6 +42,12 @@ const MemberCard = ({ member }) => {
   )
 }
 
+/**
+ * A Next.js page component that renders a list of members grouped by category.
+ * The component fetches the members from the Sanity API and renders them as a list
+ * of cards. The members are grouped by category and sorted by position.
+ * @returns {JSX.Element} A JSX element that renders the list of members.
+ */
 async function Members() {
   const members = await getMembers()
   const sequence = [
@@ -53,7 +66,7 @@ async function Members() {
     return acc
   }, {})
 
-  // Define the custom order for categories
+  // Define the display order for club positons
   const customCategoryOrder = [
     'President',
     'Secretary',
@@ -124,19 +137,16 @@ async function Members() {
         <section
           key={seq.category}
           className='container mx-auto p-4 md:px-6 pb-20 flex flex-col lg:flex-row md:gap-7'>
-          {/* <div className="w-4/5 h-fit"> */}
           <div className='w-full h-fit'>
             <h2 className='font-title uppercase text-primary font-semibold text-3xl py-6'>
               {seq.displayName}
             </h2>
-            {/* <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-7"> */}
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-7'>
               {groupedData[seq.category].map((member) => (
                 <MemberCard key={member.name} member={member} />
               ))}
             </div>
           </div>
-          {/* <div className="md:w-1/5 md:pr-6"></div> */}
         </section>
       ))}
     </>

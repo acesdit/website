@@ -1,6 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+/**
+ * Component to render a single author with a link to the member's profile,
+ * along with their name and a profile picture.
+ * @param {{ name: string, slug?: string, imageUrl?: string }} props
+ * @returns {JSX.Element}
+ */
 function Author({ name, slug, imageUrl }) {
   if (slug) {
     return (

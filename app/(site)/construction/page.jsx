@@ -1,5 +1,13 @@
 import Image from 'next/image'
 
+/**
+ * A Next.js page component that renders a static "under construction" page.
+ *
+ * It displays a construction SVG image, a heading that says "Site under
+ * construction", and a paragraph that says "Check back soon...".
+ *
+ * @returns {JSX.Element} A JSX element that renders the page.
+ */
 function page() {
   return (
     <div className='container mx-auto px-4 md:px-6 flex flex-col items-center text-center justify-center min-h-screen'>

@@ -1,5 +1,14 @@
 import React from 'react'
 
+/**
+ * A Next.js page component that renders a 404 page.
+ *
+ * It displays a heading that says "404", a heading that says "Page Not Found",
+ * and a paragraph of text that says "Check your link or contact administrator
+ * if you think this is a mistake".
+ *
+ * @returns {JSX.Element} A JSX element that renders the 404 page.
+ */
 function notFound() {
   return (
     <div className='bg-black text-white'>

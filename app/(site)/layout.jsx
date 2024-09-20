@@ -39,6 +39,14 @@ export const metadata = {
   },
 }
 
+/**
+ * The root layout of the app. This component is responsible for rendering
+ * the navbar, main content, and footer of the app.
+ *
+ * @param {JSX.Element} children - The main content of the app.
+ *
+ * @returns {JSX.Element} The root layout of the app.
+ */
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>

@@ -1,3 +1,7 @@
+/**
+ * This component renders the text version of logo used in the navigation bar.
+ * @returns {React.ReactElement} The logo text element.
+ */
 function LogoText() {
   return (
     <svg

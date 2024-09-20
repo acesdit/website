@@ -2,6 +2,16 @@
 import { useState, Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
+/**
+ * A modal that appears when the site is under construction.
+ *
+ * It appears on top of the page and contains a message that the site is
+ * under construction. It also contains a button to close the modal.
+ *
+ * The modal is centered on the page and has a yellow stripe at the top.
+ *
+ * @returns {JSX.Element} The modal component.
+ */
 function ConstructionModal() {
   const [isOpen, setIsOpen] = useState(true)
 

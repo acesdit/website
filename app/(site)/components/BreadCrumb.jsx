@@ -1,5 +1,13 @@
 import Link from 'next/link'
 
+/**
+ * A Next.js component that renders a breadcrumb with a parent and child.
+ * @param {Object} props - The component props.
+ * @param {string} props.parent - The parent's name.
+ * @param {string} props.parentLink - The parent's href.
+ * @param {string} props.child - The child's name.
+ * @returns {JSX.Element} A JSX element that renders the breadcrumb.
+ */
 function BreadCrumb({ parent, parentLink, child }) {
   return (
     <div className='hero-container nav-target'>

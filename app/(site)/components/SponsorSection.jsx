@@ -1,6 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+/**
+ * A Next.js page component that renders the co-sponsors section.
+ *
+ * It renders a section that displays the logos of the co-sponsors.
+ *
+ * @returns {JSX.Element} The rendered section.
+ */
 function EventsSection() {
   return (
     <section>

@@ -11,6 +11,13 @@ export const metadata = {
   title: 'Blog | ACES DIT',
 }
 
+/**
+ * A Next.js page that displays all blog posts in a grid. The most recent post
+ * is displayed as a featured card, and the rest of the posts are displayed as
+ * smaller cards below.
+ *
+ * @returns {JSX.Element} A JSX element that renders the blog page.
+ */
 async function Page() {
   const posts = await getPosts()
   const DESCRIPTION_LENGTH = 150
