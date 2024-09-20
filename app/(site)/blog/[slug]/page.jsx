@@ -10,6 +10,13 @@ import Link from 'next/link'
 import BreadCrumb from '../../components/BreadCrumb'
 import { post } from '@/sanity/schemas/post'
 
+/**
+ * A component that renders an image with a caption.
+ * @param {{ value: SanityImageAsset }} props
+ * Properties:
+ * - `value`: The Sanity image asset to be rendered.
+ * @returns {JSX.Element} A JSX element that renders the image.
+ */
 const SampleImageComponent = ({ value }) => {
   const { width, height } = getImageDimensions(value)
   return (
@@ -28,6 +35,26 @@ const SampleImageComponent = ({ value }) => {
   )
 }
 
+/**
+ * Generates metadata for a blog post.
+ * @param {{ params: { slug: string } }} context - The Next.js page context.
+ * @returns {Promise<Object>} A promise that resolves with the metadata object.
+ * The metadata object contains the following properties:
+ * - `title`: The title of the blog post.
+ * - `description`: A summary of the blog post.
+ * - `openGraph`: The Open Graph metadata. Contains the following properties:
+ *   - `title`: The title of the blog post.
+ *   - `description`: A summary of the blog post.
+ *   - `url`: The URL of the blog post.
+ *   - `siteName`: The name of the website.
+ *   - `images`: An array of Open Graph images. Each image contains the following properties:
+ *     - `url`: The URL of the image.
+ *     - `width`: The width of the image in pixels.
+ *     - `height`: The height of the image in pixels.
+ *     - `alt`: The alt text for the image.
+ *   - `locale`: The locale of the website.
+ *   - `type`: The type of the website.
+ */
 export async function generateMetadata({ params }) {
   const postData = await getPost(params.slug)
   return {
@@ -52,6 +79,12 @@ export async function generateMetadata({ params }) {
   }
 }
 
+/**
+ * A Next.js page component that renders a single blog post.
+ * @param {Object} params - The Next.js page parameters.
+ * @param {string} params.slug - The slug of the blog post.
+ * @returns {JSX.Element} A JSX element that renders a single blog post.
+ */
 async function BlogPost({ params }) {
   const slug = params.slug
   const post = await getPost(slug)

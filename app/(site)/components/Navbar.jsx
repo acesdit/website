@@ -5,6 +5,14 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import NavOpenSvg from './NavOpenSvg'
 import LogoText from './LogoText'
+/**
+ * A responsive navigation bar with links to pages.
+ *
+ * @returns {React.ReactElement} A nav element with links to pages.
+ *
+ * @example
+ * <Navbar />
+ */
 function Navbar() {
   const routes = [
     { label: 'Home', route: '/', external: false },

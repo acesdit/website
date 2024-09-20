@@ -2,6 +2,16 @@
 
 import { useState } from 'react'
 
+// Experimental!
+// A small quiz app within the website
+
+/**
+ * Option component for the quiz
+ * @param {Object} option - The option data (id, text)
+ * @param {string} selectedOption - The currently selected option id
+ * @param {function} handleOptionSelect - Function to handle selecting an option
+ * @returns {JSX.Element} A single option component
+ */
 const Option = ({ option, selectedOption, handleOptionSelect }) => {
   return (
     <li
@@ -22,7 +32,14 @@ const Option = ({ option, selectedOption, handleOptionSelect }) => {
   )
 }
 
-// Question component
+/**
+ * Question component for the quiz
+ * @param {string} question - The question text
+ * @param {Array<Object>} options - An array of options for the current question
+ * @param {string} selectedOption - The currently selected option id
+ * @param {function} handleOptionSelect - Function to handle selecting an option
+ * @returns {JSX.Element} A single question component
+ */
 const Question = ({
   question,
   options,
@@ -48,6 +65,27 @@ const Question = ({
   )
 }
 
+/**
+ * A component to render a quiz. It will display the questions one after the other
+ * and will allow the user to select an option for each question. When the user
+ * submits the quiz, the selected options will be logged to the console.
+ *
+ * @param {Object} quizData - An object containing the quiz data. The object should
+ * have the following properties:
+ * - quizID: string - The ID of the quiz
+ * - quizTitle: string - The title of the quiz
+ * - totalQuestions: number - The total number of questions in the quiz
+ * - hasTimer: boolean - Whether the quiz has a timer or not
+ * - timeForEachQuestionInSeconds: number - The time for each question in seconds
+ * - questions: Array<Object> - An array of objects representing the questions in the quiz.
+ * Each object should have the following properties:
+ * - id: number - The ID of the question
+ * - question: string - The question text
+ * - options: Array<Object> - An array of objects representing the options for the question.
+ * Each object should have the following properties:
+ * - id: number - The ID of the option
+ * - text: string - The text of the option
+ */
 export default function Quiz() {
   const quizData = {
     quizID: 'QZ104',

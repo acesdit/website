@@ -2,6 +2,14 @@ import Image from 'next/image'
 import teamImg from '../../../public/images/team.png'
 import newImg from '../../../public/images/newteam.jpeg'
 
+/**
+ * A Next.js page component that renders the "Who are we" section.
+ *
+ * It displays a brief description of the club and its purpose, along with a
+ * photo of the team.
+ *
+ * @returns {JSX.Element} A JSX element that renders the section.
+ */
 function WhoAreWeSection() {
   return (
     <section>

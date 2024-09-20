@@ -1,3 +1,8 @@
+/**
+ * An SVG of a hamburger menu icon.
+ *
+ * It's a grey (#999) 20x20px icon, with three horizontal bars.
+ */
 function NavOpenSvg() {
   return (
     <svg

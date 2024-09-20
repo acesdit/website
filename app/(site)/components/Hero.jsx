@@ -1,6 +1,15 @@
 import Image from 'next/image'
 import phoenix from '../../../public/images/phoenix.svg'
 
+/**
+ * A Next.js page component that renders the hero section.
+ *
+ * It displays the Association of Computer Engineering Students' logo,
+ * a heading that says "Masters of Excellence", and a paragraph that
+ * describes the association's purpose.
+ *
+ * @returns {JSX.Element} A JSX element that renders the hero section.
+ */
 function Hero() {
   return (
     <div className='hero-container'>

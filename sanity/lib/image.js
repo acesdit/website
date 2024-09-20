@@ -7,6 +7,11 @@ const imageBuilder = createImageUrlBuilder({
   dataset: dataset || '',
 })
 
+/**
+ * Generates a URL for a given image asset.
+ * @param {import('sanity').Asset} source
+ * @returns {string}
+ */
 export const urlForImage = (source) => {
   return imageBuilder?.image(source).auto('format').fit('max')
 }

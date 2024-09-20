@@ -1,3 +1,11 @@
+/**
+ * A component that renders a hero section with a title. Used in pages other than homepage for page title.
+ * @param {{ title: string }} props
+ * Properties:
+ * - `title`: The title of the hero section.
+ * @returns {JSX.Element}
+ * A JSX element that renders a hero section with a title.
+ */
 function Header({ title }) {
   return (
     <div className='hero-container nav-target'>
