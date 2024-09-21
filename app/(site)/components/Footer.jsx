@@ -100,7 +100,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className='flex bg-black justify-center items-center py-3'>
         <p className='text-white text-sm text-center leading-relaxed'>
-          © 2023 Association of Computer Engineering Students, DIT. All rights
+          © 2024 Association of Computer Engineering Students, DIT. All rights
           reserved.
         </p>
       </div>

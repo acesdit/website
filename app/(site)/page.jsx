@@ -2,7 +2,7 @@ import Hero from './components/Hero'
 import WhoAreWeSection from './components/WhoAreWeSection'
 import StatsSection from './components/StatsSection'
 // import EventsSection from './components/EventsSection'
-import SponsorsSection from './components/SponsorSection'
+// import SponsorsSection from './components/SponsorSection'
 
 // Homepage of website
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Hero />
       <WhoAreWeSection />
       <StatsSection />
-      <SponsorsSection />
+      {/* <SponsorsSection /> */}
     </>
   )
 }
