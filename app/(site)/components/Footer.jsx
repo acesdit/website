@@ -1,6 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+/**
+ * Footer component that renders the footer section of the website.
+ *
+ * It includes the following sections:
+ * - Logo and introduction
+ * - Social media links
+ * - Other links (Verify Membership, Privacy Policy, Sitemap)
+ * - Copyright notice
+ *
+ * @returns {JSX.Element} The rendered footer section.
+ */
 const Footer = () => {
   const socials = [
     {
@@ -89,7 +100,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className='flex bg-black justify-center items-center py-3'>
         <p className='text-white text-sm text-center leading-relaxed'>
-          © 2023 Association of Computer Engineering Students, DIT. All rights
+          © 2024 Association of Computer Engineering Students, DIT. All rights
           reserved.
         </p>
       </div>

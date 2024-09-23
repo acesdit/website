@@ -2,6 +2,15 @@ import Image from 'next/image'
 import CountUp from 'react-countup'
 import IncrementNumber from './IncrementNumber'
 
+/**
+ * A Next.js page component that renders the stats section.
+ *
+ * It displays a section with a title, a paragraph, and a
+ * list of three items with their respective numbers.
+ * The numbers are rendered using the `IncrementNumber` component.
+ *
+ * @returns {JSX.Element} A JSX element that renders the section.
+ */
 function StatsSection() {
   return (
     <section className='bg-beige'>

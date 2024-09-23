@@ -1,3 +1,5 @@
+//Files in archive/Vaibhavi are not being used for the main website !!! 
+
 import React from "react";
 import "./App.css";
 import ImageComponent from "./ImageComponent";

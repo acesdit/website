@@ -10,7 +10,12 @@ import {
 import { getMember } from '@/sanity/lib/client'
 import { urlForImage } from '@/sanity/lib/image'
 
-// For pages titles
+/**
+ * Generates metadata for a member page. (Currently only title)
+ * @param {Object} context - The Next.js page context.
+ * @param {string} context.params.slug - The slug of the member.
+ * @returns {Promise<Object>} A promise that resolves with the metadata object.
+ */
 export async function generateMetadata({ params }) {
   const memberData = await getMember(params.slug)
   return {
@@ -18,6 +23,12 @@ export async function generateMetadata({ params }) {
   }
 }
 
+/**
+ * A Next.js page component that renders a member's profile page.
+ * @param {{ params: { slug: string } }} props - The Next.js page props.
+ * @returns {JSX.Element} A JSX element that renders the member's profile page.
+ * If the member is not found, it renders a 404 page.
+ */
 async function Member({ params }) {
   const member = await getMember(params.slug)
 

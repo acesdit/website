@@ -2,6 +2,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { DateTime } from 'luxon'
 
+/**
+ * A component that renders a single blog post as a card.
+ * @param {{ title: string, imageURL: string, description: string, creationDate: string, linkTo: string }} props
+ * Properties:
+ * - `title`: The title of the blog post.
+ * - `imageURL`: The URL of the image associated with the blog post.
+ * - `description`: A summary of the blog post.
+ * - `creationDate`: The date the blog post was published.
+ * - `linkTo`: The URL of the blog post.
+ * @returns {JSX.Element}
+ * A JSX element that renders a single blog post as a card.
+ */
 export const BlogCard = ({
   title,
   imageURL,
