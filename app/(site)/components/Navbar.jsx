@@ -17,6 +17,11 @@ function Navbar() {
   const routes = [
     { label: 'Home', route: '/', external: false },
     { label: 'Blog', route: '/blog', external: false },
+    {
+      label: 'Event',
+      route: 'https://aces-hackseries.vercel.app/',
+      external: false,
+    },
     // { label: 'Events', route: '/construction', external: true },
     { label: 'Members', route: '/members', external: false },
     { label: 'Contact', route: 'mailto:acesdyp1@gmail.com', external: true },
