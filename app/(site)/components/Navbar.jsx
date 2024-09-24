@@ -18,7 +18,7 @@ function Navbar() {
     { label: 'Home', route: '/', external: false },
     { label: 'Blog', route: '/blog', external: false },
     {
-      label: 'Event',
+      label: 'HackSeries',
       route: 'https://aces-hackseries.vercel.app/',
       external: false,
     },
