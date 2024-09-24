@@ -90,7 +90,9 @@ async function Members() {
     'Jr. External Affairs Officer',
     'Jr. Public Relations Officer',
     'Jr. Technical Head',
+    'HOD, Computer Dept.',
     'Faculty Coordinator',
+    'Faculty Advisor',
   ]
 
   // Sort the keys based on the custom order
