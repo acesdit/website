@@ -19,7 +19,7 @@ function Navbar() {
     { label: 'Blog', route: '/blog', external: false },
     {
       label: 'HackSeries',
-      route: 'https://aces-hackseries.vercel.app/',
+      route: 'https://acesdit.github.io/HackSeries/',
       external: false,
     },
     // { label: 'Events', route: '/construction', external: true },
