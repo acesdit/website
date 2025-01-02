@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import teamImg from '../../../public/images/team.png'
-import newImg from '../../../public/images/newteam.jpeg'
+import newImg from '../../../public/images/Team2024.jpg'
 
 /**
  * A Next.js page component that renders the "Who are we" section.
@@ -31,6 +31,12 @@ function WhoAreWeSection() {
             src={newImg}
             width={640}
             height={340}
+            style={{
+              color: 'transparent',
+              //width: '700px',
+              borderRadius: '25px',
+              //height: '550px',
+            }}
             alt='Team Photo'
             placeholder='blur'
           />
