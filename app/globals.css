@@ -63,6 +63,7 @@ svg.with-text {
   }
   .bleed-container {
     margin-left: calc((100vw - var(--container-width)) / 2);
+    margin-right: calc((100vw - var(--container-width)) / 2);
   }
 }
 
